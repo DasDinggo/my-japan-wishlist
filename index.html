@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+<meta name="apple-mobile-web-app-title" content="Japan Wishlist"/>
+<title>Japan Wishlist</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,sans-serif;background:#F4F2EE;color:#2C2820;}
+button{cursor:pointer;font-family:inherit;touch-action:manipulation;}
+input,select,textarea{font-family:inherit;font-size:16px;}
+textarea{resize:none;}
+ 
+header{background:#EDEAE4;border-bottom:1px solid #D8D4CC;position:sticky;top:0;z-index:50;}
+.header-top{padding:14px 16px 10px;display:flex;justify-content:space-between;align-items:center;}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(145deg,#FF7A2F,#E8650A);display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;flex-shrink:0;}
+.brand-name{font-size:17px;font-weight:700;}
+.brand-sub{font-size:12px;color:#9E9186;}
+.curr-btn{background:#F4F2EE;border:1.5px solid #D8D4CC;border-radius:20px;padding:6px 12px;font-size:12px;color:#9E9186;display:flex;gap:4px;align-items:center;}
+.curr-btn span.on{color:#E8650A;font-weight:700;}
+.cities{display:flex;gap:5px;flex-wrap:wrap;padding:0 16px 10px;}
+.city{font-size:11px;padding:3px 9px;border:1px solid #D8D4CC;border-radius:20px;color:#6B5F52;background:#F4F2EE;}
+.tabs{display:flex;border-top:1px solid #D8D4CC;}
+.tab{flex:1;padding:11px 8px;background:none;border:none;font-size:14px;font-weight:500;color:#9E9186;position:relative;display:flex;align-items:center;justify-content:center;gap:6px;}
+.tab.on{color:#E8650A;}
+.tab.on::after{content:'';position:absolute;bottom:0;left:16%;right:16%;height:2px;background:#E8650A;border-radius:1px;}
+.badge{background:#E8650A;color:#fff;border-radius:10px;font-size:11px;padding:1px 6px;font-weight:700;}
+ 
+main{padding:0 0 60px;}
+.page{padding:14px;}
+ 
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+.kpi{background:#EDEAE4;border-radius:14px;padding:14px 16px;}
+.kpi-v{font-size:24px;font-weight:700;}
+.kpi-v.og{color:#E8650A;}
+.kpi-l{font-size:12px;color:#9E9186;margin-top:3px;}
+ 
+.card{background:#EDEAE4;border-radius:16px;padding:16px;margin-bottom:12px;}
+.card-lbl{font-size:11px;font-weight:600;color:#9E9186;letter-spacing:.7px;margin-bottom:14px;}
+ 
+.prog-wrap{display:flex;align-items:center;gap:16px;}
+.prog-pct{font-size:40px;font-weight:700;color:#E8650A;flex-shrink:0;}
+.prog-right{flex:1;}
+.prog-track{height:7px;background:#F4F2EE;border-radius:4px;overflow:hidden;margin-bottom:8px;border:1px solid #D8D4CC;}
+.prog-fill{height:100%;background:linear-gradient(90deg,#E8650A,#FF9147);border-radius:4px;}
+.prog-meta{font-size:12px;display:flex;gap:10px;flex-wrap:wrap;}
+ 
+.pie-wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center;}
+.legend-item{display:flex;align-items:center;gap:7px;margin-bottom:8px;font-size:12px;}
+.ldot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.lcat{flex:1;color:#6B5F52;}
+.ln{font-weight:600;min-width:18px;text-align:right;}
+.lc{min-width:68px;text-align:right;font-size:11px;}
+ 
+.cbar{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.cbar-name{font-size:13px;color:#6B5F52;width:80px;flex-shrink:0;}
+.cbar-track{flex:1;height:5px;background:#F4F2EE;border:1px solid #D8D4CC;border-radius:3px;overflow:hidden;}
+.cbar-fill{height:100%;background:linear-gradient(90deg,#E8650A,#FF9147);border-radius:3px;}
+.cbar-r{display:flex;flex-direction:column;align-items:flex-end;min-width:72px;font-size:12px;}
+ 
+.cat-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.cat-tag{font-size:11px;padding:4px 8px;border-radius:8px;font-weight:500;flex-shrink:0;white-space:nowrap;max-width:130px;overflow:hidden;text-overflow:ellipsis;}
+.cat-mid{flex:1;display:flex;align-items:center;gap:6px;}
+.mtrack{flex:1;height:4px;background:#F4F2EE;border:1px solid #D8D4CC;border-radius:2px;overflow:hidden;}
+.mfill{height:100%;border-radius:2px;}
+.mpct{font-size:11px;font-weight:600;min-width:28px;text-align:right;}
+.cat-r{display:flex;flex-direction:column;align-items:flex-end;min-width:64px;font-size:11px;}
+ 
+.empty{color:#9E9186;font-size:13px;padding:4px 0;}
+ 
+.top-row{display:flex;gap:10px;margin-bottom:12px;}
+.s-wrap{flex:1;position:relative;}
+.s-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:#9E9186;pointer-events:none;}
+.s-inp{width:100%;padding:10px 12px 10px 32px;background:#EDEAE4;border:1px solid #D8D4CC;border-radius:12px;font-size:16px;color:#2C2820;}
+.s-inp:focus{outline:none;border-color:#E8650A;}
+.add-btn{padding:10px 18px;background:#E8650A;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;}
+ 
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:4px;-webkit-overflow-scrolling:touch;}
+.chips::-webkit-scrollbar{display:none;}
+.chip{padding:6px 12px;background:#EDEAE4;border:1px solid #D8D4CC;border-radius:20px;font-size:12px;color:#6B5F52;white-space:nowrap;flex-shrink:0;}
+.chip.on{background:#FDE8D8;color:#E8650A;border-color:#E8650A99;}
+.cdiv{width:1px;background:#D8D4CC;flex-shrink:0;margin:4px 0;}
+.rline{font-size:12px;color:#9E9186;margin-bottom:10px;}
+ 
+.icard{background:#EDEAE4;border-radius:16px;margin-bottom:10px;overflow:hidden;}
+.itop{display:flex;align-items:flex-start;gap:10px;padding:14px 14px 10px;}
+.chk{width:28px;height:28px;border-radius:8px;border:2px solid #D8D4CC;background:#F4F2EE;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-top:1px;}
+.chk.on{background:#E8650A;border-color:#E8650A;color:#fff;}
+.ibody{flex:1;}
+.iname{font-size:15px;font-weight:600;margin-bottom:5px;}
+.iname.done{text-decoration:line-through;color:#9E9186;}
+.itags{display:flex;gap:6px;flex-wrap:wrap;}
+.cpill{font-size:11px;padding:3px 8px;border-radius:6px;font-weight:500;}
+.citypill{font-size:11px;padding:3px 8px;border-radius:6px;background:#F4F2EE;border:1px solid #D8D4CC;color:#6B5F52;}
+.iend{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;}
+.iprice{font-size:14px;font-weight:700;color:#E8650A;text-align:right;}
+.iprice.done{color:#9E9186;}
+.idash{font-size:15px;color:#9E9186;}
+.delbtn{background:#FDE8D8;border:none;color:#E8650A;font-size:13px;font-weight:700;padding:6px 10px;border-radius:8px;}
+.idet{border-top:1px solid #D8D4CC;padding:9px 14px 12px;}
+.dline{font-size:12px;color:#6B5F52;margin-bottom:4px;display:flex;gap:8px;}
+.dkey{color:#9E9186;min-width:20px;}
+.dlink{color:#E8650A;font-size:12px;word-break:break-all;text-decoration:none;border-bottom:1px solid #E8650A55;}
+.cstrip{font-size:11px;font-weight:600;text-align:center;padding:7px;}
+ 
+.overlay{position:fixed;inset:0;background:rgba(44,40,32,.5);z-index:9999;display:flex;align-items:flex-end;justify-content:center;}
+.sheet{background:#EDEAE4;border-radius:22px 22px 0 0;width:100%;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;}
+.shandle{width:36px;height:4px;background:#D8D4CC;border-radius:2px;margin:12px auto 0;flex-shrink:0;}
+.shead{display:flex;justify-content:space-between;align-items:center;padding:14px 20px 10px;flex-shrink:0;}
+.stitle{font-size:17px;font-weight:700;}
+.sdone{background:none;border:none;color:#E8650A;font-size:16px;font-weight:600;}
+.sbody{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:8px 20px 16px;flex:1;}
+.sfoot{display:flex;gap:10px;padding:12px 20px 32px;border-top:1px solid #D8D4CC;flex-shrink:0;}
+.flbl{font-size:13px;font-weight:500;color:#6B5F52;margin-bottom:7px;}
+.frow{display:flex;gap:10px;margin-bottom:14px;}
+.frow > div{flex:1;}
+.inp{width:100%;padding:12px 14px;background:#F4F2EE;border:1px solid #D8D4CC;border-radius:12px;font-size:16px;color:#2C2820;}
+.inp:focus{outline:none;border-color:#E8650A;}
+.fmb{margin-bottom:14px;}
+.sugg-hint{font-size:11px;color:#9E9186;margin-bottom:8px;}
+.sugg-grid{display:flex;flex-wrap:wrap;gap:7px;}
+.schip{padding:7px 12px;background:#F4F2EE;border:1px solid #D8D4CC;border-radius:10px;font-size:12px;color:#6B5F52;}
+/* schip selected state applied via inline style */
+.schip.dashed{border-style:dashed;}
+.blink{background:none;border:none;color:#E8650A;font-size:12px;margin-top:8px;display:block;padding:0;}
+.ptoggle{display:flex;background:#EDEAE4;border:1px solid #D8D4CC;border-radius:20px;overflow:hidden;}
+.popt{padding:4px 10px;font-size:12px;font-weight:600;color:#9E9186;border:none;background:transparent;border-radius:20px;}
+.popt.on{background:#E8650A;color:#fff;}
+.phint{font-size:12px;color:#9E9186;margin-top:6px;}
+.cancelbtn{flex:1;padding:14px;background:#F4F2EE;border:1px solid #D8D4CC;border-radius:12px;font-size:16px;font-weight:600;color:#6B5F52;}
+.savebtn{flex:2;padding:14px;background:#E8650A;border:none;border-radius:12px;font-size:16px;font-weight:600;color:#fff;}
+.savebtn:disabled{opacity:.4;}
+ 
+.toast{position:fixed;bottom:36px;left:50%;transform:translateX(-50%);background:#2C2820;color:#F4F2EE;border-radius:22px;padding:10px 20px;font-size:14px;z-index:10000;white-space:nowrap;}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+var CITIES=["Osaka","Okinawa","Nagoya","Hamamatsu","Fuji","Tokyo"];
+var CATS=["Food & Drinks","Fashion & Beauty","Electronics","Anime / TCG","Souvenirs & Snacks","Other"];
+var PAL={"Food & Drinks":{b:"#FDF0D4",t:"#7A4A00",d:"#D48A00"},"Fashion & Beauty":{b:"#F8E2EE",t:"#7A1A48",d:"#CC3A7A"},"Electronics":{b:"#FDE8D8",t:"#7A2C00",d:"#D45C0A"},"Anime / TCG":{b:"#EEE0F8",t:"#4A1080",d:"#8A30CC"},"Souvenirs & Snacks":{b:"#D8F4E8",t:"#0A5030",d:"#0E9A5A"},"Other":{b:"#E8E4DE",t:"#4A4238",d:"#887868"}};
+var ICO={"Food & Drinks":"◉","Fashion & Beauty":"✿","Electronics":"⚡","Anime / TCG":"★","Souvenirs & Snacks":"◎","Other":"◆"};
+var RATE=106;
+var SUGG={Osaka:{"Food & Drinks":["Dotonbori Street","Kuromon Ichiba Market","Don Quijote Shinsaibashi","Nishiki Market"],"Fashion & Beauty":["Shinsaibashi Shopping Street","Amerika-Mura","Matsumoto Kiyoshi Shinsaibashi","Loft Umeda"],"Electronics":["Yodobashi Camera Umeda","Bic Camera Namba","Den Den Town"],"Anime / TCG":["Den Den Town","Animate Namba","Mandarake Osaka","Card Rush Osaka"],"Souvenirs & Snacks":["Dotonbori","Shinsaibashi Arcade","Osaka Station City","Kuromon Market"],"Other":["Don Quijote Dotonbori","Daiso Namba","Tokyu Hands Shinsaibashi"]},Okinawa:{"Food & Drinks":["Kokusai Street","Makishi Public Market","Don Quijote Naha","Blue Seal Ice Cream"],"Fashion & Beauty":["Kokusai Street","Eon Mall Rycom","Matsumoto Kiyoshi Naha"],"Electronics":["Yodobashi Camera Naha","Bic Camera Naha"],"Anime / TCG":["Animate Naha","Mandarake Naha","Book-Off Naha"],"Souvenirs & Snacks":["Kokusai Street","Naha Airport","Makishi Market","Tsuboya Pottery Street"],"Other":["Don Quijote Naha","Daiso Naha"]},Nagoya:{"Food & Drinks":["Osu Shotengai","Nagoya Station Underground","Don Quijote Nagoya"],"Fashion & Beauty":["Osu Shopping Arcade","Sakae District","Nagoya Parco","Matsumoto Kiyoshi Sakae"],"Electronics":["Yodobashi Camera Nagoya","Bic Camera Nagoya","Osu Shopping Arcade"],"Anime / TCG":["Animate Nagoya","Mandarake Nagoya","Card Kingdom Nagoya"],"Souvenirs & Snacks":["Nagoya Station","Osu Kannon","Atsuta Jingu","Nagoya Castle Gift Shop"],"Other":["Don Quijote Nagoya","Daiso Sakae","Tokyu Hands Nagoya"]},Hamamatsu:{"Food & Drinks":["Hamamatsu Station","Local unagi restaurants","Don Quijote Hamamatsu"],"Fashion & Beauty":["Eon Mall Hamamatsu","Zaza City","Matsumoto Kiyoshi Hamamatsu"],"Electronics":["Yodobashi Camera Hamamatsu","Eon Mall Hamamatsu"],"Anime / TCG":["Animate Hamamatsu","Book-Off Hamamatsu"],"Souvenirs & Snacks":["Hamamatsu Station","Act City Gift Shop"],"Other":["Don Quijote Hamamatsu","Daiso Hamamatsu"]},Fuji:{"Food & Drinks":["Kawaguchiko area cafes","Fuji Five Lakes shops","Local konbini"],"Fashion & Beauty":["Gotemba Premium Outlets","Matsumoto Kiyoshi Fuji"],"Electronics":["Eon Mall Fujikawaguchiko","Yamada Denki Fujinomiya"],"Anime / TCG":["Book-Off Fuji","Animate Shizuoka (nearby)"],"Souvenirs & Snacks":["Fujisan World Heritage Center","Chureito Pagoda shops","Gotemba area"],"Other":["Gotemba Premium Outlets","Don Quijote Fuji"]},Tokyo:{"Food & Drinks":["Tsukiji Outer Market","Isetan B2 Depachika","Ameyoko Market","Nakamise Asakusa","Don Quijote Shinjuku"],"Fashion & Beauty":["Shibuya 109","Harajuku Takeshita Street","Omotesando Hills","Matsumoto Kiyoshi Shibuya","Loft Shibuya"],"Electronics":["Akihabara Electric Town","Yodobashi Camera Akihabara","Bic Camera Shinjuku","Apple Store Omotesando"],"Anime / TCG":["Akihabara (entire district)","Animate Ikebukuro","Mandarake Shibuya","Nakano Broadway","Card Kingdom Akihabara"],"Souvenirs & Snacks":["Nakamise Asakusa","Tokyo Station Character Street","Odaiba","Don Quijote Shinjuku"],"Other":["Don Quijote Shinjuku","Daiso Harajuku","Tokyu Hands Shibuya"]}};
+ 
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2);}
+function gs(city,cat){return(SUGG[city]&&SUGG[city][cat])||[];}
+function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function fp(j,c){if(!j)return null;if(c==="JPY")return"\u00A5"+j.toLocaleString();var i=Math.round(j*RATE);return"Rp"+i.toLocaleString("id-ID");}
+function fps(j,c){if(!j)return"\u2014";if(c==="JPY")return"\u00A5"+j.toLocaleString();var i=Math.round(j*RATE);if(i>=1000000)return"Rp"+(i/1000000).toFixed(1)+"jt";if(i>=1000)return"Rp"+(i/1000).toFixed(0)+"rb";return"Rp"+i.toLocaleString("id-ID");}
+ 
+var items,currency="JPY",tab="dashboard",showForm=false;
+var fCat="All",fCity="All",fStat="All",srch="";
+var fd={name:"",category:"Food & Drinks",purpose:"",city:"Tokyo",location:"",price:"",remarks:"",link:""};
+var fCustomLoc=false,fPriceCur="JPY";
+ 
+try{items=JSON.parse(localStorage.getItem("jpwl_v8")||"null");}catch(e){items=null;}
+if(!items){items=[
+  {id:uid(),name:"Gundam Model RX-78",category:"Anime / TCG",purpose:"Personal collection",city:"Tokyo",location:"Akihabara (entire district)",estimatedPrice:4500,completed:false,createdAt:Date.now()-172800000,remarks:"",link:""},
+  {id:uid(),name:"Uniqlo Heattech Set",category:"Fashion & Beauty",purpose:"Winter wear",city:"Osaka",location:"Shinsaibashi Shopping Street",estimatedPrice:3200,completed:false,createdAt:Date.now()-86400000,remarks:"",link:""},
+  {id:uid(),name:"Matcha KitKat Box",category:"Food & Drinks",purpose:"Gifts for family",city:"Tokyo",location:"Nakamise Asakusa",estimatedPrice:1200,completed:true,createdAt:Date.now()-18000000,remarks:"",link:""},
+  {id:uid(),name:"Shiseido Sunscreen SPF50",category:"Fashion & Beauty",purpose:"Skincare",city:"Osaka",location:"Matsumoto Kiyoshi Shinsaibashi",estimatedPrice:1800,completed:false,createdAt:Date.now()-7200000,remarks:"",link:""},
+  {id:uid(),name:"Hobonichi Techo Planner",category:"Other",purpose:"Daily journal",city:"Tokyo",location:"Tokyu Hands Shinjuku",estimatedPrice:2800,completed:false,createdAt:Date.now()-3600000,remarks:"",link:""}
+];}
+ 
+function save(){try{localStorage.setItem("jpwl_v8",JSON.stringify(items));}catch(e){}}
+ 
+var toastT=null;
+function toast(msg){
+  var el=document.getElementById("t-el");
+  if(el)el.remove();
+  var d=document.createElement("div");
+  d.id="t-el";d.className="toast";d.textContent=msg;
+  document.body.appendChild(d);
+  if(toastT)clearTimeout(toastT);
+  toastT=setTimeout(function(){var x=document.getElementById("t-el");if(x)x.remove();},2400);
+}
+ 
+function render(){
+  var app=document.getElementById("app");
+  if(!app)return;
+  app.innerHTML=header()+
+    "<main><div class='page'>"+
+    (tab==="dashboard"?dashboard():itemList())+
+    "</div></main>"+
+    (showForm?form():"");
+  bind();
+}
+ 
+function header(){
+  return "<header>"+
+    "<div class='header-top'>"+
+      "<div class='brand'>"+
+        "<div class='logo'>\u65C5</div>"+
+        "<div><div class='brand-name'>Japan Wishlist</div><div class='brand-sub'>Trip Planner \u00B7 2026</div></div>"+
+      "</div>"+
+      "<button class='curr-btn' id='cbtn'>"+
+        "<span class='"+(currency==="JPY"?"on":"")+"'>\u00A5 JPY</span>"+
+        "<span style='color:#D8D4CC'>\u00B7</span>"+
+        "<span class='"+(currency==="IDR"?"on":"")+"'>Rp IDR</span>"+
+      "</button>"+
+    "</div>"+
+    "<div class='cities'>"+CITIES.map(function(c){return"<span class='city'>"+esc(c)+"</span>";}).join("")+"</div>"+
+    "<div class='tabs'>"+
+      "<button class='tab"+(tab==="dashboard"?" on":"")+"' id='tdash'>Dashboard</button>"+
+      "<button class='tab"+(tab==="items"?" on":"")+"' id='titems'>Item List <span class='badge'>"+items.length+"</span></button>"+
+    "</div>"+
+  "</header>";
+}
+ 
+function dashboard(){
+  var total=items.length,done=items.filter(function(i){return i.completed;}).length;
+  var pct=total?Math.round(done/total*100):0;
+  var tJPY=items.reduce(function(s,i){return s+(i.estimatedPrice||0);},0);
+  var dJPY=items.filter(function(i){return i.completed;}).reduce(function(s,i){return s+(i.estimatedPrice||0);},0);
+  var byCat={};
+  CATS.forEach(function(c){byCat[c]={n:0,cost:0,done:0};});
+  items.forEach(function(i){byCat[i.category].n++;byCat[i.category].cost+=i.estimatedPrice||0;if(i.completed)byCat[i.category].done++;});
+  var aCats=CATS.filter(function(c){return byCat[c].n>0;});
+  var byCity={};
+  CITIES.forEach(function(c){byCity[c]={n:0,cost:0};});
+  items.forEach(function(i){byCity[i.city].n++;byCity[i.city].cost+=i.estimatedPrice||0;});
+ 
+  // pie
+  var PIE=84,CX=96,CY=96,ang=-Math.PI/2,paths="";
+  aCats.forEach(function(cat){
+    var p=PAL[cat],frac=byCat[cat].n/total;
+    if(aCats.length===1){paths+='<circle cx="'+CX+'" cy="'+CY+'" r="'+PIE+'" fill="'+p.d+'"/>';return;}
+    var sw=Math.min(frac*2*Math.PI,2*Math.PI-0.001);
+    var x1=CX+PIE*Math.cos(ang),y1=CY+PIE*Math.sin(ang);ang+=sw;
+    var x2=CX+PIE*Math.cos(ang),y2=CY+PIE*Math.sin(ang);
+    paths+='<path d="M'+CX+','+CY+' L'+x1.toFixed(1)+','+y1.toFixed(1)+' A'+PIE+','+PIE+' 0 '+(sw>Math.PI?1:0)+',1 '+x2.toFixed(1)+','+y2.toFixed(1)+' Z" fill="'+p.d+'" stroke="#EDEAE4" stroke-width="2"/>';
+  });
+ 
+  return "<div class='kpi-grid'>"+
+    kpi(total,"Wishes",false)+kpi(done,"Done",true)+
+    kpi(fps(tJPY-dJPY,currency),"Budget Left",true)+kpi(fps(dJPY,currency),"Spent",false)+
+  "</div>"+
+  "<div class='card'><div class='card-lbl'>FULFILLMENT STATUS</div>"+
+    "<div class='prog-wrap'>"+
+      "<div class='prog-pct'>"+pct+"%</div>"+
+      "<div class='prog-right'>"+
+        "<div class='prog-track'><div class='prog-fill' style='width:"+pct+"%'></div></div>"+
+        "<div class='prog-meta'>"+
+          "<span style='color:#E8650A;font-weight:600'>"+done+" completed</span>"+
+          "<span style='color:#6B5F52'>"+  (total-done)+" remaining</span>"+
+          "<span style='color:#9E9186'>"+fps(tJPY,currency)+" total</span>"+
+        "</div>"+
+      "</div>"+
+    "</div>"+
+  "</div>"+
+  "<div class='card'><div class='card-lbl'>BY CATEGORY</div>"+
+    (total===0?"<div class='empty'>Add items to see breakdown</div>":
+    "<div class='pie-wrap'>"+
+      "<svg width='192' height='192' viewBox='0 0 192 192' style='flex-shrink:0;max-width:100%;height:auto'>"+
+        paths+
+        "<circle cx='"+CX+"' cy='"+CY+"' r='40' fill='#EDEAE4'/>"+
+        "<text x='"+CX+"' y='"+(CY-7)+"' text-anchor='middle' fill='#2C2820' font-size='21' font-weight='700'>"+total+"</text>"+
+        "<text x='"+CX+"' y='"+(CY+11)+"' text-anchor='middle' fill='#9E9186' font-size='9' letter-spacing='1'>ITEMS</text>"+
+      "</svg>"+
+      "<div>"+aCats.map(function(cat){var p=PAL[cat];return"<div class='legend-item'><span class='ldot' style='background:"+p.d+"'></span><span class='lcat'>"+esc(cat)+"</span><span class='ln'>"+byCat[cat].n+"</span><span class='lc' style='color:"+p.d+"'>"+fps(byCat[cat].cost,currency)+"</span></div>";}).join("")+"</div>"+
+    "</div>")+
+  "</div>"+
+  "<div class='card'><div class='card-lbl'>ESTIMATED COST BY CITY</div>"+
+    (CITIES.filter(function(c){return byCity[c].n>0;}).length===0?"<div class='empty'>No items yet</div>":
+    CITIES.filter(function(c){return byCity[c].n>0;}).map(function(city){
+      var d=byCity[city],w=total?(d.n/total)*100:0;
+      return "<div class='cbar'><span class='cbar-name'>"+esc(city)+"</span><div class='cbar-track'><div class='cbar-fill' style='width:"+w+"%'></div></div><div class='cbar-r'><span>"+d.n+"</span><span style='color:#9E9186'>"+fps(d.cost,currency)+"</span></div></div>";
+    }).join(""))+
+  "</div>"+
+  "<div class='card'><div class='card-lbl'>CATEGORY BREAKDOWN</div>"+
+    (aCats.length===0?"<div class='empty'>Add items to see breakdown</div>":
+    aCats.map(function(cat){
+      var d=byCat[cat],p=PAL[cat],cp=d.n?Math.round(d.done/d.n*100):0;
+      return "<div class='cat-row'><span class='cat-tag' style='background:"+p.b+";color:"+p.t+"'>"+ICO[cat]+" "+esc(cat)+"</span><div class='cat-mid'><div class='mtrack'><div class='mfill' style='width:"+cp+"%;background:"+p.d+"'></div></div><span class='mpct' style='color:"+p.d+"'>"+cp+"%</span></div><div class='cat-r'><span style='color:#6B5F52'>"+d.done+"/"+d.n+"</span><span style='color:"+p.d+";font-weight:600'>"+fps(d.cost,currency)+"</span></div></div>";
+    }).join(""))+
+  "</div>";
+}
+ 
+function kpi(v,l,og){return "<div class='kpi'><div class='kpi-v"+(og?" og":"")+"'>"+esc(String(v))+"</div><div class='kpi-l'>"+esc(l)+"</div></div>";}
+ 
+function itemList(){
+  var fil=items.filter(function(i){
+    if(fCat!=="All"&&i.category!==fCat)return false;
+    if(fCity!=="All"&&i.city!==fCity)return false;
+    if(fStat==="Done"&&!i.completed)return false;
+    if(fStat==="Pending"&&i.completed)return false;
+    if(srch&&i.name.toLowerCase().indexOf(srch.toLowerCase())<0)return false;
+    return true;
+  });
+  var statusChips=["All","Pending","Done"].map(function(s){return"<button class='chip"+(fStat===s?" on":"")+"' data-stat='"+s+"'>"+s+"</button>";}).join("");
+  var cityChips=["All"].concat(CITIES).map(function(c){return"<button class='chip"+(fCity===c?" on":"")+"' data-city='"+esc(c)+"'>"+esc(c)+"</button>";}).join("");
+  var catChips=["All"].concat(CATS).map(function(c){
+    var on=fCat===c,p=c!=="All"?PAL[c]:null;
+    var st=on&&p?"style='background:"+p.b+";color:"+p.t+";border-color:"+p.d+"88'"  :"";
+    return"<button class='chip"+(on&&c==="All"?" on":"")+"' "+st+" data-catt='"+esc(c)+"'>"+esc(c)+"</button>";
+  }).join("");
+  return "<div class='top-row'>"+
+    "<div class='s-wrap'><span class='s-icon'>\u2315</span><input class='s-inp' id='sinp' placeholder='Search items\u2026' value='"+esc(srch)+"'/></div>"+
+    "<button class='add-btn' id='abtn'>+ Add</button>"+
+  "</div>"+
+  "<div class='chips'>"+statusChips+"<span class='cdiv'></span>"+cityChips+"<span class='cdiv'></span>"+catChips+"</div>"+
+  "<div class='rline'>"+fil.length+" item"+(fil.length!==1?"s":"")+"</div>"+
+  (fil.length===0?"<div class='card empty'>No items match.</div>":fil.map(function(item,idx){return icard(item,idx);}).join(""));
+}
+ 
+function icard(item,idx){
+  var p=PAL[item.category]||PAL["Other"];
+  var pr=item.estimatedPrice?fp(item.estimatedPrice,currency):null;
+  var det=(item.purpose||item.location||item.remarks||item.link)?
+    "<div class='idet'>"+
+      (item.purpose?"<div class='dline'><span class='dkey'>For</span>"+esc(item.purpose)+"</div>":"")+
+      (item.location?"<div class='dline'><span class='dkey'>At</span>"+esc(item.location)+"</div>":"")+
+      (item.remarks?"<div class='dline'><span class='dkey'>Note</span><span>"+esc(item.remarks)+"</span></div>":"")+
+      (item.link?"<div class='dline'><span class='dkey'>Link</span><a href='"+esc(item.link)+"' target='_blank' rel='noopener noreferrer' class='dlink'>"+esc(item.link.replace(/^https?:\/\//,"").replace(/\/$/,""))+"</a></div>":"")+
+    "</div>":"";
+  return "<div class='icard'>"+
+    "<div class='itop'>"+
+      "<button class='chk"+(item.completed?" on":"")+"' data-tog='"+item.id+"'>"+(item.completed?"\u2713":"")+"</button>"+
+      "<div class='ibody'>"+
+        "<div class='iname"+(item.completed?" done":"")+"'>"+esc(item.name)+"</div>"+
+        "<div class='itags'><span class='cpill' style='background:"+p.b+";color:"+p.t+"'>"+ICO[item.category]+" "+esc(item.category)+"</span><span class='citypill'>"+esc(item.city)+"</span></div>"+
+      "</div>"+
+      "<div class='iend'>"+
+        (pr?"<span class='iprice"+(item.completed?" done":"")+"'>"+esc(pr)+"</span>":"<span class='idash'>\u2014</span>")+
+        "<button class='delbtn' data-del='"+item.id+"'>\u2715</button>"+
+      "</div>"+
+    "</div>"+
+    det+
+    (item.completed?"<div class='cstrip' style='background:"+p.b+";color:"+p.t+"'>"+ICO[item.category]+" Completed</div>":"")+
+  "</div>";
+}
+ 
+function form(){
+  var p=PAL[fd.category];
+  var suggs=gs(fd.city,fd.category);
+  var locHtml="";
+  if(!fCustomLoc&&suggs.length>0){
+    locHtml="<div class='sugg-hint'>Tap a suggestion</div><div class='sugg-grid'>"+
+      suggs.map(function(s){var sel=fd.location===s;var st=sel?"background:"+p.b+";color:"+p.t+";border-color:"+p.d+"":"";return"<button class='schip' style='"+st+"' data-sg='"+esc(s)+"'>"+esc(s)+"</button>";}).join("")+
+      "<button class='schip dashed' id='custbtn'>\u270E Type own</button></div>";
+  } else {
+    locHtml="<input class='inp' id='locinp' placeholder='Store, area\u2026' value='"+esc(fd.location)+"'/>"+
+      (suggs.length>0?"<button class='blink' id='backbtn'>\u2190 Suggestions</button>":"");
+  }
+  var prev="";
+  var pv=parseFloat(fd.price);
+  if(!isNaN(pv)&&pv>0){prev=fPriceCur==="JPY"?"\u2248 Rp"+Math.round(pv*RATE).toLocaleString("id-ID"):"\u2248 \u00A5"+Math.round(pv/RATE).toLocaleString();}
+  return "<div class='overlay' id='ov'>"+
+    "<div class='sheet'>"+
+      "<div class='shandle'></div>"+
+      "<div class='shead'><div class='stitle'>New Wish</div><button class='sdone' id='closebtn'>Done</button></div>"+
+      "<div class='sbody'>"+
+        "<div class='fmb'><div class='flbl'>Item Name</div><input class='inp' id='fn' placeholder='What do you want?' value='"+esc(fd.name)+"'/></div>"+
+        "<div class='frow'>"+
+          "<div><div class='flbl'>Category</div><select class='inp' id='fcat'>"+CATS.map(function(c){return"<option value='"+esc(c)+"'"+(fd.category===c?" selected":"")+">"+esc(c)+"</option>";}).join("")+"</select></div>"+
+          "<div><div class='flbl'>City</div><select class='inp' id='fcity'>"+CITIES.map(function(c){return"<option value='"+esc(c)+"'"+(fd.city===c?" selected":"")+">"+esc(c)+"</option>";}).join("")+"</select></div>"+
+        "</div>"+
+        "<div class='fmb'><div class='flbl'>What is it for?</div><input class='inp' id='fpurp' placeholder='Personal use, gift\u2026' value='"+esc(fd.purpose)+"'/></div>"+
+        "<div class='fmb'><div class='flbl'>Where to Find \u2014 "+esc(fd.city)+"</div>"+locHtml+"</div>"+
+        "<div class='fmb'>"+
+          "<div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:7px'>"+
+            "<div class='flbl'>Estimated Price</div>"+
+            "<div class='ptoggle'>"+
+              "<button class='popt"+(fPriceCur==="JPY"?" on":"")+"' id='pjpy'>\u00A5 JPY</button>"+
+              "<button class='popt"+(fPriceCur==="IDR"?" on":"")+"' id='pidr'>Rp IDR</button>"+
+            "</div>"+
+          "</div>"+
+          "<input class='inp' id='fprice' type='number' placeholder='"+(fPriceCur==="JPY"?"Enter amount in \u00A5":"Enter amount in Rp")+"' value='"+esc(fd.price)+"'/>"+
+          "<div class='phint' id='phint'>"+esc(prev)+"</div>"+
+        "</div>"+
+        "<div class='fmb'><div class='flbl'>Remarks (optional)</div><textarea class='inp' id='frmk' placeholder='Notes, size, colour\u2026' style='min-height:72px;line-height:1.5'>"+esc(fd.remarks)+"</textarea></div>"+
+        "<div class='fmb'><div class='flbl'>Product Link (optional)</div><input class='inp' id='flink' type='url' placeholder='https://\u2026' value='"+esc(fd.link)+"'/></div>"+
+      "</div>"+
+      "<div class='sfoot'>"+
+        "<button class='cancelbtn' id='cancelbtn'>Cancel</button>"+
+        "<button class='savebtn' id='savebtn'"+(fd.name.trim()?"":" disabled")+">Add to Wishlist</button>"+
+      "</div>"+
+    "</div>"+
+  "</div>";
+}
+ 
+function bind(){
+  function on(id,ev,fn){var el=document.getElementById(id);if(el)el.addEventListener(ev,fn);}
+  function all(sel,fn){document.querySelectorAll(sel).forEach(fn);}
+ 
+  on("cbtn","click",function(){currency=currency==="JPY"?"IDR":"JPY";render();});
+  on("tdash","click",function(){tab="dashboard";render();});
+  on("titems","click",function(){tab="items";render();});
+  on("abtn","click",function(){fd={name:"",category:"Food & Drinks",purpose:"",city:"Tokyo",location:"",price:"",remarks:"",link:""};fCustomLoc=false;fPriceCur="JPY";showForm=true;render();});
+  on("sinp","input",function(e){srch=e.target.value;render();});
+ 
+  all("[data-stat]",function(b){b.addEventListener("click",function(){fStat=b.dataset.stat;render();});});
+  all("[data-city]",function(b){b.addEventListener("click",function(){fCity=b.dataset.city;render();});});
+  all("[data-catt]",function(b){b.addEventListener("click",function(){fCat=b.dataset.catt;render();});});
+  all("[data-tog]",function(b){b.addEventListener("click",function(){var id=b.dataset.tog;items=items.map(function(i){return i.id===id?Object.assign({},i,{completed:!i.completed}):i;});save();render();});});
+  all("[data-del]",function(b){b.addEventListener("click",function(){items=items.filter(function(i){return i.id!==b.dataset.del;});save();toast("Item removed");render();});});
+ 
+  on("ov","click",function(e){if(e.target===document.getElementById("ov")){showForm=false;render();}});
+  on("closebtn","click",function(){showForm=false;render();});
+  on("cancelbtn","click",function(){showForm=false;render();});
+ 
+  on("fn","input",function(e){fd.name=e.target.value;var sb=document.getElementById("savebtn");if(sb)sb.disabled=!e.target.value.trim();});
+  on("fcat","change",function(e){fd.category=e.target.value;fd.location="";fCustomLoc=false;render();});
+  on("fcity","change",function(e){fd.city=e.target.value;fd.location="";fCustomLoc=false;render();});
+  on("fpurp","input",function(e){fd.purpose=e.target.value;});
+  on("fprice","input",function(e){
+    fd.price=e.target.value;
+    var pv=parseFloat(e.target.value),ph=document.getElementById("phint");
+    if(ph){if(!isNaN(pv)&&pv>0){ph.textContent=fPriceCur==="JPY"?"\u2248 Rp"+Math.round(pv*RATE).toLocaleString("id-ID"):"\u2248 \u00A5"+Math.round(pv/RATE).toLocaleString();}else{ph.textContent="";}}
+  });
+  on("frmk","input",function(e){fd.remarks=e.target.value;});
+  on("flink","input",function(e){fd.link=e.target.value;});
+  on("locinp","input",function(e){fd.location=e.target.value;});
+ 
+  on("pjpy","click",function(){if(fPriceCur!=="JPY"){var v=parseFloat(fd.price);if(!isNaN(v)&&v>0)fd.price=String(Math.round(v/RATE));fPriceCur="JPY";render();}});
+  on("pidr","click",function(){if(fPriceCur!=="IDR"){var v=parseFloat(fd.price);if(!isNaN(v)&&v>0)fd.price=String(Math.round(v*RATE));fPriceCur="IDR";render();}});
+ 
+  all("[data-sg]",function(b){b.addEventListener("click",function(){fd.location=b.dataset.sg;render();});});
+  on("custbtn","click",function(){fCustomLoc=true;fd.location="";render();});
+  on("backbtn","click",function(){fCustomLoc=false;fd.location="";render();});
+ 
+  on("savebtn","click",function(){
+    if(!fd.name.trim())return;
+    var jpy=parseFloat(fd.price)||0;
+    if(fPriceCur==="IDR")jpy=Math.round(jpy/RATE);
+    var newItem={id:uid(),name:fd.name,category:fd.category,purpose:fd.purpose,city:fd.city,location:fd.location,estimatedPrice:jpy,completed:false,createdAt:Date.now(),remarks:fd.remarks,link:fd.link};
+    items=[newItem].concat(items);
+    save();showForm=false;toast("Added to wishlist \u2713");render();
+  });
+}
+ 
+render();
+</script>
+</body>
+</html>
+ 
