@@ -13,55 +13,53 @@ body{font-family:-apple-system,sans-serif;background:#F4F2EE;color:#2C2820;}
 button{cursor:pointer;font-family:inherit;touch-action:manipulation;}
 input,select,textarea{font-family:inherit;font-size:16px;}
 textarea{resize:none;}
- 
+a{color:inherit;text-decoration:none;}
 header{background:#EDEAE4;border-bottom:1px solid #D8D4CC;position:sticky;top:0;z-index:50;}
 .header-top{padding:14px 16px 10px;display:flex;justify-content:space-between;align-items:center;}
 .brand{display:flex;align-items:center;gap:12px;}
 .logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(145deg,#FF7A2F,#E8650A);display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;flex-shrink:0;}
 .brand-name{font-size:17px;font-weight:700;}
 .brand-sub{font-size:12px;color:#9E9186;}
-.curr-btn{background:#F4F2EE;border:1.5px solid #D8D4CC;border-radius:20px;padding:6px 12px;font-size:12px;color:#9E9186;display:flex;gap:4px;align-items:center;}
+.curr-btn{background:#F4F2EE;border:1.5px solid #D8D4CC;border-radius:20px;padding:6px 10px;font-size:12px;color:#9E9186;display:flex;gap:4px;align-items:center;}
 .curr-btn span.on{color:#E8650A;font-weight:700;}
 .cities{display:flex;gap:5px;flex-wrap:wrap;padding:0 16px 10px;}
-.city{font-size:11px;padding:3px 9px;border:1px solid #D8D4CC;border-radius:20px;color:#6B5F52;background:#F4F2EE;}
+.city-tag{font-size:11px;padding:3px 9px;border:1px solid #D8D4CC;border-radius:20px;color:#6B5F52;background:#F4F2EE;}
 .tabs{display:flex;border-top:1px solid #D8D4CC;}
-.tab{flex:1;padding:11px 8px;background:none;border:none;font-size:14px;font-weight:500;color:#9E9186;position:relative;display:flex;align-items:center;justify-content:center;gap:6px;}
+.tab{flex:1;padding:11px 6px;background:none;border:none;font-size:13px;font-weight:500;color:#9E9186;position:relative;display:flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap;}
 .tab.on{color:#E8650A;}
-.tab.on::after{content:'';position:absolute;bottom:0;left:16%;right:16%;height:2px;background:#E8650A;border-radius:1px;}
-.badge{background:#E8650A;color:#fff;border-radius:10px;font-size:11px;padding:1px 6px;font-weight:700;}
- 
+.tab.on::after{content:'';position:absolute;bottom:0;left:12%;right:12%;height:2px;background:#E8650A;border-radius:1px;}
+.badge{background:#E8650A;color:#fff;border-radius:10px;font-size:10px;padding:1px 5px;font-weight:700;}
 main{padding:0 0 60px;}
 .page{padding:14px;}
- 
-.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
-.kpi{background:#EDEAE4;border-radius:14px;padding:14px 16px;}
-.kpi-v{font-size:24px;font-weight:700;}
-.kpi-v.og{color:#E8650A;}
-.kpi-l{font-size:12px;color:#9E9186;margin-top:3px;}
- 
 .card{background:#EDEAE4;border-radius:16px;padding:16px;margin-bottom:12px;}
 .card-lbl{font-size:11px;font-weight:600;color:#9E9186;letter-spacing:.7px;margin-bottom:14px;}
- 
+.empty{color:#9E9186;font-size:13px;padding:4px 0;}
+.cost-hero{background:#EDEAE4;border-radius:16px;padding:18px 16px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;}
+.cost-lbl{font-size:11px;font-weight:600;color:#9E9186;letter-spacing:.7px;margin-bottom:6px;}
+.cost-val{font-size:32px;font-weight:700;color:#E8650A;letter-spacing:-0.5px;}
+.cost-sub{font-size:12px;color:#9E9186;margin-top:4px;}
+.kpi3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;}
+.kpi{background:#EDEAE4;border-radius:14px;padding:12px 14px;}
+.kpi-v{font-size:20px;font-weight:700;}
+.kpi-v.og{color:#E8650A;}
+.kpi-l{font-size:11px;color:#9E9186;margin-top:3px;}
 .prog-wrap{display:flex;align-items:center;gap:16px;}
-.prog-pct{font-size:40px;font-weight:700;color:#E8650A;flex-shrink:0;}
+.prog-pct{font-size:38px;font-weight:700;color:#E8650A;flex-shrink:0;}
 .prog-right{flex:1;}
 .prog-track{height:7px;background:#F4F2EE;border-radius:4px;overflow:hidden;margin-bottom:8px;border:1px solid #D8D4CC;}
 .prog-fill{height:100%;background:linear-gradient(90deg,#E8650A,#FF9147);border-radius:4px;}
 .prog-meta{font-size:12px;display:flex;gap:10px;flex-wrap:wrap;}
- 
 .pie-wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center;}
 .legend-item{display:flex;align-items:center;gap:7px;margin-bottom:8px;font-size:12px;}
 .ldot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .lcat{flex:1;color:#6B5F52;}
 .ln{font-weight:600;min-width:18px;text-align:right;}
-.lc{min-width:68px;text-align:right;font-size:11px;}
- 
+.lc{min-width:64px;text-align:right;font-size:11px;}
 .cbar{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
 .cbar-name{font-size:13px;color:#6B5F52;width:80px;flex-shrink:0;}
 .cbar-track{flex:1;height:5px;background:#F4F2EE;border:1px solid #D8D4CC;border-radius:3px;overflow:hidden;}
 .cbar-fill{height:100%;background:linear-gradient(90deg,#E8650A,#FF9147);border-radius:3px;}
 .cbar-r{display:flex;flex-direction:column;align-items:flex-end;min-width:72px;font-size:12px;}
- 
 .cat-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
 .cat-tag{font-size:11px;padding:4px 8px;border-radius:8px;font-weight:500;flex-shrink:0;white-space:nowrap;max-width:130px;overflow:hidden;text-overflow:ellipsis;}
 .cat-mid{flex:1;display:flex;align-items:center;gap:6px;}
@@ -69,44 +67,81 @@ main{padding:0 0 60px;}
 .mfill{height:100%;border-radius:2px;}
 .mpct{font-size:11px;font-weight:600;min-width:28px;text-align:right;}
 .cat-r{display:flex;flex-direction:column;align-items:flex-end;min-width:64px;font-size:11px;}
- 
-.empty{color:#9E9186;font-size:13px;padding:4px 0;}
- 
-.top-row{display:flex;gap:10px;margin-bottom:12px;}
+.top-row{display:flex;gap:8px;margin-bottom:12px;align-items:center;}
 .s-wrap{flex:1;position:relative;}
-.s-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:#9E9186;pointer-events:none;}
+.s-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:#9E9186;pointer-events:none;font-size:16px;}
 .s-inp{width:100%;padding:10px 12px 10px 32px;background:#EDEAE4;border:1px solid #D8D4CC;border-radius:12px;font-size:16px;color:#2C2820;}
 .s-inp:focus{outline:none;border-color:#E8650A;}
-.add-btn{padding:10px 18px;background:#E8650A;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;}
- 
+.add-btn{padding:10px 14px;background:#E8650A;color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:600;flex-shrink:0;}
+.compact-btn{padding:10px 12px;background:#EDEAE4;border:1px solid #D8D4CC;color:#6B5F52;border-radius:12px;font-size:12px;font-weight:500;flex-shrink:0;}
+.compact-btn.on{background:#FDE8D8;color:#E8650A;border-color:#E8650A88;}
 .chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:4px;-webkit-overflow-scrolling:touch;}
 .chips::-webkit-scrollbar{display:none;}
 .chip{padding:6px 12px;background:#EDEAE4;border:1px solid #D8D4CC;border-radius:20px;font-size:12px;color:#6B5F52;white-space:nowrap;flex-shrink:0;}
 .chip.on{background:#FDE8D8;color:#E8650A;border-color:#E8650A99;}
 .cdiv{width:1px;background:#D8D4CC;flex-shrink:0;margin:4px 0;}
 .rline{font-size:12px;color:#9E9186;margin-bottom:10px;}
- 
 .icard{background:#EDEAE4;border-radius:16px;margin-bottom:10px;overflow:hidden;}
 .itop{display:flex;align-items:flex-start;gap:10px;padding:14px 14px 10px;}
 .chk{width:28px;height:28px;border-radius:8px;border:2px solid #D8D4CC;background:#F4F2EE;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-top:1px;}
 .chk.on{background:#E8650A;border-color:#E8650A;color:#fff;}
-.ibody{flex:1;}
-.iname{font-size:15px;font-weight:600;margin-bottom:5px;}
+.ibody{flex:1;min-width:0;}
+.iname{font-size:15px;font-weight:600;margin-bottom:5px;word-break:break-word;}
 .iname.done{text-decoration:line-through;color:#9E9186;}
 .itags{display:flex;gap:6px;flex-wrap:wrap;}
 .cpill{font-size:11px;padding:3px 8px;border-radius:6px;font-weight:500;}
 .citypill{font-size:11px;padding:3px 8px;border-radius:6px;background:#F4F2EE;border:1px solid #D8D4CC;color:#6B5F52;}
-.iend{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;}
+.iend{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;}
 .iprice{font-size:14px;font-weight:700;color:#E8650A;text-align:right;}
 .iprice.done{color:#9E9186;}
 .idash{font-size:15px;color:#9E9186;}
-.delbtn{background:#FDE8D8;border:none;color:#E8650A;font-size:13px;font-weight:700;padding:6px 10px;border-radius:8px;}
+.ibtns{display:flex;gap:5px;}
+.editbtn{background:#F4F2EE;border:1px solid #D8D4CC;color:#6B5F52;font-size:12px;padding:5px 9px;border-radius:8px;}
+.delbtn{background:#FDE8D8;border:none;color:#E8650A;font-size:12px;font-weight:700;padding:5px 9px;border-radius:8px;}
 .idet{border-top:1px solid #D8D4CC;padding:9px 14px 12px;}
 .dline{font-size:12px;color:#6B5F52;margin-bottom:4px;display:flex;gap:8px;}
-.dkey{color:#9E9186;min-width:20px;}
+.dkey{color:#9E9186;min-width:20px;flex-shrink:0;}
 .dlink{color:#E8650A;font-size:12px;word-break:break-all;text-decoration:none;border-bottom:1px solid #E8650A55;}
 .cstrip{font-size:11px;font-weight:600;text-align:center;padding:7px;}
- 
+.icard-c{background:#EDEAE4;border-radius:12px;margin-bottom:7px;display:flex;align-items:center;gap:8px;padding:10px 12px;overflow:hidden;}
+.icard-c .chk{width:24px;height:24px;border-radius:6px;margin-top:0;flex-shrink:0;}
+.iname-c{font-size:14px;font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.iname-c.done{text-decoration:line-through;color:#9E9186;}
+.cdot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.citypill-c{font-size:10px;padding:2px 6px;border-radius:5px;background:#F4F2EE;border:1px solid #D8D4CC;color:#6B5F52;flex-shrink:0;}
+.iprice-c{font-size:13px;font-weight:700;color:#E8650A;flex-shrink:0;max-width:80px;text-align:right;word-break:break-all;}
+.iprice-c.done{color:#9E9186;}
+.ibtns-c{display:flex;gap:4px;flex-shrink:0;}
+.editbtn-c{background:#F4F2EE;border:1px solid #D8D4CC;color:#6B5F52;font-size:11px;padding:4px 7px;border-radius:6px;}
+.delbtn-c{background:#FDE8D8;border:none;color:#E8650A;font-size:11px;font-weight:700;padding:4px 7px;border-radius:6px;}
+.map-btn-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
+.map-btn-pins{padding:11px 8px;border-radius:12px;border:1.5px solid #E8650A;background:#F4F2EE;color:#E8650A;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;}
+.map-btn-route{padding:11px 8px;border-radius:12px;border:none;background:#E8650A;color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;}
+.cluster-card{background:#EDEAE4;border-radius:16px;padding:14px;margin-bottom:10px;border-left:3px solid #8A30CC;}
+.cluster-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;}
+.cluster-name{font-size:15px;font-weight:700;color:#2C2820;}
+.cluster-meta{font-size:12px;color:#9E9186;margin-top:2px;}
+.cluster-badge{font-size:11px;padding:3px 9px;border-radius:20px;background:#EEE0F8;color:#4A1080;font-weight:500;white-space:nowrap;}
+.cluster-stores{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;padding-left:10px;border-left:2px solid #D8D4CC;}
+.cluster-store-name{font-size:13px;color:#2C2820;}
+.route-btn{width:100%;padding:11px;border-radius:10px;border:none;background:#E8650A;color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;}
+.dir-btn{font-size:11px;padding:4px 8px;border-radius:8px;background:#E8650A;border:none;color:#fff;font-weight:600;flex-shrink:0;}
+.sbar-wrap{margin-bottom:10px;}
+.sbar-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.sbar-label{font-size:13px;color:#6B5F52;width:80px;flex-shrink:0;}
+.sbar-track{flex:1;height:20px;background:#F4F2EE;border:1px solid #D8D4CC;border-radius:6px;overflow:hidden;position:relative;}
+.sbar-fill{height:100%;background:linear-gradient(90deg,#E8650A,#FF9147);border-radius:6px;}
+.sbar-count{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:600;color:#2C2820;}
+.scard{background:#EDEAE4;border-radius:14px;margin-bottom:8px;padding:12px 14px;overflow:hidden;}
+.scard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
+.scard-name{font-size:15px;font-weight:600;flex:1;min-width:0;word-break:break-word;}
+.scard-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;align-items:center;}
+.cluster-pill{font-size:11px;padding:2px 8px;border-radius:6px;background:#EEE0F8;color:#4A1080;font-weight:500;}
+.scard-note{font-size:12px;color:#6B5F52;margin-top:8px;border-top:1px solid #D8D4CC;padding-top:8px;}
+.scard-addr{font-size:11px;color:#9E9186;margin-top:6px;word-break:break-all;}
+.scard-btns{display:flex;gap:5px;flex-shrink:0;}
+.seditbtn{background:#F4F2EE;border:1px solid #D8D4CC;color:#6B5F52;font-size:12px;padding:5px 9px;border-radius:8px;}
+.sdelbtn{background:#FDE8D8;border:none;color:#E8650A;font-size:12px;font-weight:700;padding:5px 9px;border-radius:8px;}
 .overlay{position:fixed;inset:0;background:rgba(44,40,32,.5);z-index:9999;display:flex;align-items:flex-end;justify-content:center;}
 .sheet{background:#EDEAE4;border-radius:22px 22px 0 0;width:100%;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;}
 .shandle{width:36px;height:4px;background:#D8D4CC;border-radius:2px;margin:12px auto 0;flex-shrink:0;}
@@ -117,24 +152,24 @@ main{padding:0 0 60px;}
 .sfoot{display:flex;gap:10px;padding:12px 20px 32px;border-top:1px solid #D8D4CC;flex-shrink:0;}
 .flbl{font-size:13px;font-weight:500;color:#6B5F52;margin-bottom:7px;}
 .frow{display:flex;gap:10px;margin-bottom:14px;}
-.frow > div{flex:1;}
+.frow>div{flex:1;min-width:0;}
 .inp{width:100%;padding:12px 14px;background:#F4F2EE;border:1px solid #D8D4CC;border-radius:12px;font-size:16px;color:#2C2820;}
 .inp:focus{outline:none;border-color:#E8650A;}
 .fmb{margin-bottom:14px;}
 .sugg-hint{font-size:11px;color:#9E9186;margin-bottom:8px;}
 .sugg-grid{display:flex;flex-wrap:wrap;gap:7px;}
 .schip{padding:7px 12px;background:#F4F2EE;border:1px solid #D8D4CC;border-radius:10px;font-size:12px;color:#6B5F52;}
-/* schip selected state applied via inline style */
+.schip.sel{border-color:#E8650A;color:#7A2C00;background:#FDE8D8;}
 .schip.dashed{border-style:dashed;}
 .blink{background:none;border:none;color:#E8650A;font-size:12px;margin-top:8px;display:block;padding:0;}
 .ptoggle{display:flex;background:#EDEAE4;border:1px solid #D8D4CC;border-radius:20px;overflow:hidden;}
 .popt{padding:4px 10px;font-size:12px;font-weight:600;color:#9E9186;border:none;background:transparent;border-radius:20px;}
 .popt.on{background:#E8650A;color:#fff;}
 .phint{font-size:12px;color:#9E9186;margin-top:6px;}
+.auto-tag{font-size:11px;color:#8A30CC;margin-top:6px;font-style:italic;}
 .cancelbtn{flex:1;padding:14px;background:#F4F2EE;border:1px solid #D8D4CC;border-radius:12px;font-size:16px;font-weight:600;color:#6B5F52;}
 .savebtn{flex:2;padding:14px;background:#E8650A;border:none;border-radius:12px;font-size:16px;font-weight:600;color:#fff;}
 .savebtn:disabled{opacity:.4;}
- 
 .toast{position:fixed;bottom:36px;left:50%;transform:translateX(-50%);background:#2C2820;color:#F4F2EE;border-radius:22px;padding:10px 20px;font-size:14px;z-index:10000;white-space:nowrap;}
 </style>
 </head>
@@ -146,6 +181,14 @@ var CATS=["Food & Drinks","Fashion & Beauty","Electronics","Anime / TCG","Souven
 var PAL={"Food & Drinks":{b:"#FDF0D4",t:"#7A4A00",d:"#D48A00"},"Fashion & Beauty":{b:"#F8E2EE",t:"#7A1A48",d:"#CC3A7A"},"Electronics":{b:"#FDE8D8",t:"#7A2C00",d:"#D45C0A"},"Anime / TCG":{b:"#EEE0F8",t:"#4A1080",d:"#8A30CC"},"Souvenirs & Snacks":{b:"#D8F4E8",t:"#0A5030",d:"#0E9A5A"},"Other":{b:"#E8E4DE",t:"#4A4238",d:"#887868"}};
 var ICO={"Food & Drinks":"◉","Fashion & Beauty":"✿","Electronics":"⚡","Anime / TCG":"★","Souvenirs & Snacks":"◎","Other":"◆"};
 var RATE=106;
+var CLUSTER_KEYS={
+  "Osaka":[{k:["nipponbashi","den den","nippombashi","nanbanaka","naniwa ward, nanban","nipponbashi, osaka"],c:"Nipponbashi"},{k:["shinsaibashi","shinsai"],c:"Shinsaibashi"},{k:["namba","namb"],c:"Namba"},{k:["america-mura","amerikamura","amemura","america mura"],c:"Amerika-Mura"},{k:["umeda"],c:"Umeda"},{k:["dotonbori","dotombori"],c:"Dotonbori"}],
+  "Tokyo":[{k:["akihabara","akiba","sotokanda"],c:"Akihabara"},{k:["shibuya"],c:"Shibuya"},{k:["shinjuku"],c:"Shinjuku"},{k:["ikebukuro"],c:"Ikebukuro"},{k:["harajuku"],c:"Harajuku"},{k:["nakano"],c:"Nakano"},{k:["shimokitazawa"],c:"Shimokitazawa"},{k:["ginza"],c:"Ginza"},{k:["asakusa"],c:"Asakusa"},{k:["ueno"],c:"Ueno"},{k:["omotesando"],c:"Omotesando"}],
+  "Nagoya":[{k:["osu","nipponbashi"],c:"Osu"},{k:["sakae"],c:"Sakae"},{k:["nagoya station","nagoyaeki"],c:"Nagoya Station"}],
+  "Okinawa":[{k:["kokusai","naha"],c:"Kokusai Street"},{k:["rycom","okinawa city"],c:"Rycom"}],
+  "Hamamatsu":[{k:["hamamatsu station","hamamatsueki"],c:"Hamamatsu Station"},{k:["zaza city","zaza"],c:"Zaza City"}],
+  "Fuji":[{k:["kawaguchiko","kawaguchi"],c:"Kawaguchiko"},{k:["gotemba"],c:"Gotemba"},{k:["fujinomiya"],c:"Fujinomiya"}]
+};
 var SUGG={Osaka:{"Food & Drinks":["Dotonbori Street","Kuromon Ichiba Market","Don Quijote Shinsaibashi","Nishiki Market"],"Fashion & Beauty":["Shinsaibashi Shopping Street","Amerika-Mura","Matsumoto Kiyoshi Shinsaibashi","Loft Umeda"],"Electronics":["Yodobashi Camera Umeda","Bic Camera Namba","Den Den Town"],"Anime / TCG":["Den Den Town","Animate Namba","Mandarake Osaka","Card Rush Osaka"],"Souvenirs & Snacks":["Dotonbori","Shinsaibashi Arcade","Osaka Station City","Kuromon Market"],"Other":["Don Quijote Dotonbori","Daiso Namba","Tokyu Hands Shinsaibashi"]},Okinawa:{"Food & Drinks":["Kokusai Street","Makishi Public Market","Don Quijote Naha","Blue Seal Ice Cream"],"Fashion & Beauty":["Kokusai Street","Eon Mall Rycom","Matsumoto Kiyoshi Naha"],"Electronics":["Yodobashi Camera Naha","Bic Camera Naha"],"Anime / TCG":["Animate Naha","Mandarake Naha","Book-Off Naha"],"Souvenirs & Snacks":["Kokusai Street","Naha Airport","Makishi Market","Tsuboya Pottery Street"],"Other":["Don Quijote Naha","Daiso Naha"]},Nagoya:{"Food & Drinks":["Osu Shotengai","Nagoya Station Underground","Don Quijote Nagoya"],"Fashion & Beauty":["Osu Shopping Arcade","Sakae District","Nagoya Parco","Matsumoto Kiyoshi Sakae"],"Electronics":["Yodobashi Camera Nagoya","Bic Camera Nagoya","Osu Shopping Arcade"],"Anime / TCG":["Animate Nagoya","Mandarake Nagoya","Card Kingdom Nagoya"],"Souvenirs & Snacks":["Nagoya Station","Osu Kannon","Atsuta Jingu","Nagoya Castle Gift Shop"],"Other":["Don Quijote Nagoya","Daiso Sakae","Tokyu Hands Nagoya"]},Hamamatsu:{"Food & Drinks":["Hamamatsu Station","Local unagi restaurants","Don Quijote Hamamatsu"],"Fashion & Beauty":["Eon Mall Hamamatsu","Zaza City","Matsumoto Kiyoshi Hamamatsu"],"Electronics":["Yodobashi Camera Hamamatsu","Eon Mall Hamamatsu"],"Anime / TCG":["Animate Hamamatsu","Book-Off Hamamatsu"],"Souvenirs & Snacks":["Hamamatsu Station","Act City Gift Shop"],"Other":["Don Quijote Hamamatsu","Daiso Hamamatsu"]},Fuji:{"Food & Drinks":["Kawaguchiko area cafes","Fuji Five Lakes shops","Local konbini"],"Fashion & Beauty":["Gotemba Premium Outlets","Matsumoto Kiyoshi Fuji"],"Electronics":["Eon Mall Fujikawaguchiko","Yamada Denki Fujinomiya"],"Anime / TCG":["Book-Off Fuji","Animate Shizuoka (nearby)"],"Souvenirs & Snacks":["Fujisan World Heritage Center","Chureito Pagoda shops","Gotemba area"],"Other":["Gotemba Premium Outlets","Don Quijote Fuji"]},Tokyo:{"Food & Drinks":["Tsukiji Outer Market","Isetan B2 Depachika","Ameyoko Market","Nakamise Asakusa","Don Quijote Shinjuku"],"Fashion & Beauty":["Shibuya 109","Harajuku Takeshita Street","Omotesando Hills","Matsumoto Kiyoshi Shibuya","Loft Shibuya"],"Electronics":["Akihabara Electric Town","Yodobashi Camera Akihabara","Bic Camera Shinjuku","Apple Store Omotesando"],"Anime / TCG":["Akihabara (entire district)","Animate Ikebukuro","Mandarake Shibuya","Nakano Broadway","Card Kingdom Akihabara"],"Souvenirs & Snacks":["Nakamise Asakusa","Tokyo Station Character Street","Odaiba","Don Quijote Shinjuku"],"Other":["Don Quijote Shinjuku","Daiso Harajuku","Tokyu Hands Shibuya"]}};
  
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2);}
@@ -154,28 +197,68 @@ function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").
 function fp(j,c){if(!j)return null;if(c==="JPY")return"\u00A5"+j.toLocaleString();var i=Math.round(j*RATE);return"Rp"+i.toLocaleString("id-ID");}
 function fps(j,c){if(!j)return"\u2014";if(c==="JPY")return"\u00A5"+j.toLocaleString();var i=Math.round(j*RATE);if(i>=1000000)return"Rp"+(i/1000000).toFixed(1)+"jt";if(i>=1000)return"Rp"+(i/1000).toFixed(0)+"rb";return"Rp"+i.toLocaleString("id-ID");}
  
-var items,currency="JPY",tab="dashboard",showForm=false;
+function detectCluster(city,address){
+  if(!address||!city)return "";
+  var lower=address.toLowerCase();
+  var rules=CLUSTER_KEYS[city];
+  if(!rules)return "";
+  for(var i=0;i<rules.length;i++){var rule=rules[i];for(var j=0;j<rule.k.length;j++){if(lower.indexOf(rule.k[j])>=0)return rule.c;}}
+  return "";
+}
+ 
+function makeMapSearchUrl(stores){
+  if(!stores||stores.length===0)return "#";
+  if(stores.length===1){
+    var q=encodeURIComponent(stores[0].address||(stores[0].name+", "+stores[0].city));
+    return "https://www.google.com/maps/search/?api=1&query="+q;
+  }
+  var queries=stores.map(function(s){return s.address||(s.name+", "+s.city);});
+  return "https://www.google.com/maps/search/"+encodeURIComponent(queries.join(" / "));
+}
+ 
+function makeRouteUrl(stores){
+  if(!stores||stores.length===0)return "#";
+  if(stores.length===1){
+    var q=encodeURIComponent(stores[0].address||(stores[0].name+", "+stores[0].city));
+    return "https://www.google.com/maps/dir/?api=1&destination="+q+"&travelmode=walking";
+  }
+  var parts=stores.map(function(s){return encodeURIComponent(s.address||(s.name+", "+s.city));});
+  return "https://www.google.com/maps/dir/"+parts.join("/");
+}
+ 
+function makeClusterRouteUrl(stores){
+  if(!stores||stores.length===0)return "#";
+  var parts=stores.map(function(s){return encodeURIComponent(s.address||(s.name+", "+s.city));});
+  return "https://www.google.com/maps/dir/"+parts.join("/");
+}
+ 
+var items,stores;
+var currency="JPY",tab="dashboard",showForm=false,showStoreForm=false,compactMode=false;
 var fCat="All",fCity="All",fStat="All",srch="";
-var fd={name:"",category:"Food & Drinks",purpose:"",city:"Tokyo",location:"",price:"",remarks:"",link:""};
-var fCustomLoc=false,fPriceCur="JPY";
+var sCat="All",sCity="All",sSrch="";
+var fd={name:"",category:"Food & Drinks",purpose:"",city:"Tokyo",location:"",address:"",cluster:"",price:"",remarks:"",link:""};
+var fCustomLoc=false,fPriceCur="JPY",editId=null;
+var sfd={name:"",category:"Food & Drinks",city:"Tokyo",address:"",cluster:"",notes:""};
+var sEditId=null,sAutoCluster="";
  
-try{items=JSON.parse(localStorage.getItem("jpwl_v8")||"null");}catch(e){items=null;}
+try{items=JSON.parse(localStorage.getItem("jpwl_v9")||"null");}catch(e){items=null;}
 if(!items){items=[
-  {id:uid(),name:"Gundam Model RX-78",category:"Anime / TCG",purpose:"Personal collection",city:"Tokyo",location:"Akihabara (entire district)",estimatedPrice:4500,completed:false,createdAt:Date.now()-172800000,remarks:"",link:""},
-  {id:uid(),name:"Uniqlo Heattech Set",category:"Fashion & Beauty",purpose:"Winter wear",city:"Osaka",location:"Shinsaibashi Shopping Street",estimatedPrice:3200,completed:false,createdAt:Date.now()-86400000,remarks:"",link:""},
-  {id:uid(),name:"Matcha KitKat Box",category:"Food & Drinks",purpose:"Gifts for family",city:"Tokyo",location:"Nakamise Asakusa",estimatedPrice:1200,completed:true,createdAt:Date.now()-18000000,remarks:"",link:""},
-  {id:uid(),name:"Shiseido Sunscreen SPF50",category:"Fashion & Beauty",purpose:"Skincare",city:"Osaka",location:"Matsumoto Kiyoshi Shinsaibashi",estimatedPrice:1800,completed:false,createdAt:Date.now()-7200000,remarks:"",link:""},
-  {id:uid(),name:"Hobonichi Techo Planner",category:"Other",purpose:"Daily journal",city:"Tokyo",location:"Tokyu Hands Shinjuku",estimatedPrice:2800,completed:false,createdAt:Date.now()-3600000,remarks:"",link:""}
+  {id:uid(),name:"Gundam Model RX-78",category:"Anime / TCG",purpose:"Personal collection",city:"Tokyo",location:"Akihabara (entire district)",address:"",cluster:"Akihabara",estimatedPrice:4500,completed:false,createdAt:Date.now()-172800000,remarks:"",link:""},
+  {id:uid(),name:"Uniqlo Heattech Set",category:"Fashion & Beauty",purpose:"Winter wear",city:"Osaka",location:"Shinsaibashi Shopping Street",address:"",cluster:"Shinsaibashi",estimatedPrice:3200,completed:false,createdAt:Date.now()-86400000,remarks:"",link:""},
+  {id:uid(),name:"Matcha KitKat Box",category:"Food & Drinks",purpose:"Gifts for family",city:"Tokyo",location:"Nakamise Asakusa",address:"",cluster:"Asakusa",estimatedPrice:1200,completed:true,createdAt:Date.now()-18000000,remarks:"",link:""},
+  {id:uid(),name:"Shiseido Sunscreen SPF50",category:"Fashion & Beauty",purpose:"Skincare",city:"Osaka",location:"Matsumoto Kiyoshi Shinsaibashi",address:"",cluster:"Shinsaibashi",estimatedPrice:1800,completed:false,createdAt:Date.now()-7200000,remarks:"",link:""},
+  {id:uid(),name:"Hobonichi Techo Planner",category:"Other",purpose:"Daily journal",city:"Tokyo",location:"Tokyu Hands Shinjuku",address:"",cluster:"Shinjuku",estimatedPrice:2800,completed:false,createdAt:Date.now()-3600000,remarks:"",link:""}
 ];}
+try{stores=JSON.parse(localStorage.getItem("jpst_v2")||"null");}catch(e){stores=null;}
+if(!stores)stores=[];
  
-function save(){try{localStorage.setItem("jpwl_v8",JSON.stringify(items));}catch(e){}}
+function save(){try{localStorage.setItem("jpwl_v9",JSON.stringify(items));}catch(e){}}
+function saveStores(){try{localStorage.setItem("jpst_v2",JSON.stringify(stores));}catch(e){}}
  
 var toastT=null;
 function toast(msg){
-  var el=document.getElementById("t-el");
-  if(el)el.remove();
-  var d=document.createElement("div");
-  d.id="t-el";d.className="toast";d.textContent=msg;
+  var el=document.getElementById("t-el");if(el)el.remove();
+  var d=document.createElement("div");d.id="t-el";d.className="toast";d.textContent=msg;
   document.body.appendChild(d);
   if(toastT)clearTimeout(toastT);
   toastT=setTimeout(function(){var x=document.getElementById("t-el");if(x)x.remove();},2400);
@@ -184,50 +267,25 @@ function toast(msg){
 function render(){
   var app=document.getElementById("app");
   if(!app)return;
-  app.innerHTML=header()+
-    "<main><div class='page'>"+
-    (tab==="dashboard"?dashboard():itemList())+
-    "</div></main>"+
-    (showForm?form():"");
+  app.innerHTML=buildHeader()+"<main><div class='page'>"+(tab==="dashboard"?buildDashboard():(tab==="items"?buildItemList():buildStoreList()))+"</div></main>"+(showForm?buildItemForm():"")+(showStoreForm?buildStoreForm():"");
   bind();
 }
  
-function header(){
-  return "<header>"+
-    "<div class='header-top'>"+
-      "<div class='brand'>"+
-        "<div class='logo'>\u65C5</div>"+
-        "<div><div class='brand-name'>Japan Wishlist</div><div class='brand-sub'>Trip Planner \u00B7 2026</div></div>"+
-      "</div>"+
-      "<button class='curr-btn' id='cbtn'>"+
-        "<span class='"+(currency==="JPY"?"on":"")+"'>\u00A5 JPY</span>"+
-        "<span style='color:#D8D4CC'>\u00B7</span>"+
-        "<span class='"+(currency==="IDR"?"on":"")+"'>Rp IDR</span>"+
-      "</button>"+
-    "</div>"+
-    "<div class='cities'>"+CITIES.map(function(c){return"<span class='city'>"+esc(c)+"</span>";}).join("")+"</div>"+
-    "<div class='tabs'>"+
-      "<button class='tab"+(tab==="dashboard"?" on":"")+"' id='tdash'>Dashboard</button>"+
-      "<button class='tab"+(tab==="items"?" on":"")+"' id='titems'>Item List <span class='badge'>"+items.length+"</span></button>"+
-    "</div>"+
-  "</header>";
+function buildHeader(){
+  return "<header><div class='header-top'><div class='brand'><div class='logo'>\u65C5</div><div><div class='brand-name'>Japan Wishlist</div><div class='brand-sub'>Trip Planner \u00B7 2026</div></div></div><button class='curr-btn' id='cbtn'><span class='"+(currency==="JPY"?"on":"")+"'>\u00A5 JPY</span><span style='color:#D8D4CC'>\u00B7</span><span class='"+(currency==="IDR"?"on":"")+"'>Rp IDR</span></button></div><div class='cities'>"+CITIES.map(function(c){return"<span class='city-tag'>"+esc(c)+"</span>";}).join("")+"</div><div class='tabs'><button class='tab"+(tab==="dashboard"?" on":"")+"' id='tdash'>Dashboard</button><button class='tab"+(tab==="items"?" on":"")+"' id='titems'>Items <span class='badge'>"+items.length+"</span></button><button class='tab"+(tab==="stores"?" on":"")+"' id='tstores'>Stores <span class='badge'>"+stores.length+"</span></button></div></header>";
 }
  
-function dashboard(){
+function buildDashboard(){
   var total=items.length,done=items.filter(function(i){return i.completed;}).length;
   var pct=total?Math.round(done/total*100):0;
   var tJPY=items.reduce(function(s,i){return s+(i.estimatedPrice||0);},0);
   var dJPY=items.filter(function(i){return i.completed;}).reduce(function(s,i){return s+(i.estimatedPrice||0);},0);
-  var byCat={};
-  CATS.forEach(function(c){byCat[c]={n:0,cost:0,done:0};});
+  var byCat={};CATS.forEach(function(c){byCat[c]={n:0,cost:0,done:0};});
   items.forEach(function(i){byCat[i.category].n++;byCat[i.category].cost+=i.estimatedPrice||0;if(i.completed)byCat[i.category].done++;});
   var aCats=CATS.filter(function(c){return byCat[c].n>0;});
-  var byCity={};
-  CITIES.forEach(function(c){byCity[c]={n:0,cost:0};});
+  var byCity={};CITIES.forEach(function(c){byCity[c]={n:0,cost:0};});
   items.forEach(function(i){byCity[i.city].n++;byCity[i.city].cost+=i.estimatedPrice||0;});
- 
-  // pie
-  var PIE=84,CX=96,CY=96,ang=-Math.PI/2,paths="";
+  var PIE=80,CX=92,CY=92,ang=-Math.PI/2,paths="";
   aCats.forEach(function(cat){
     var p=PAL[cat],frac=byCat[cat].n/total;
     if(aCats.length===1){paths+='<circle cx="'+CX+'" cy="'+CY+'" r="'+PIE+'" fill="'+p.d+'"/>';return;}
@@ -236,203 +294,166 @@ function dashboard(){
     var x2=CX+PIE*Math.cos(ang),y2=CY+PIE*Math.sin(ang);
     paths+='<path d="M'+CX+','+CY+' L'+x1.toFixed(1)+','+y1.toFixed(1)+' A'+PIE+','+PIE+' 0 '+(sw>Math.PI?1:0)+',1 '+x2.toFixed(1)+','+y2.toFixed(1)+' Z" fill="'+p.d+'" stroke="#EDEAE4" stroke-width="2"/>';
   });
- 
-  return "<div class='kpi-grid'>"+
-    kpi(total,"Wishes",false)+kpi(done,"Done",true)+
-    kpi(fps(tJPY-dJPY,currency),"Budget Left",true)+kpi(fps(dJPY,currency),"Spent",false)+
-  "</div>"+
-  "<div class='card'><div class='card-lbl'>FULFILLMENT STATUS</div>"+
-    "<div class='prog-wrap'>"+
-      "<div class='prog-pct'>"+pct+"%</div>"+
-      "<div class='prog-right'>"+
-        "<div class='prog-track'><div class='prog-fill' style='width:"+pct+"%'></div></div>"+
-        "<div class='prog-meta'>"+
-          "<span style='color:#E8650A;font-weight:600'>"+done+" completed</span>"+
-          "<span style='color:#6B5F52'>"+  (total-done)+" remaining</span>"+
-          "<span style='color:#9E9186'>"+fps(tJPY,currency)+" total</span>"+
-        "</div>"+
-      "</div>"+
-    "</div>"+
-  "</div>"+
-  "<div class='card'><div class='card-lbl'>BY CATEGORY</div>"+
-    (total===0?"<div class='empty'>Add items to see breakdown</div>":
-    "<div class='pie-wrap'>"+
-      "<svg width='192' height='192' viewBox='0 0 192 192' style='flex-shrink:0;max-width:100%;height:auto'>"+
-        paths+
-        "<circle cx='"+CX+"' cy='"+CY+"' r='40' fill='#EDEAE4'/>"+
-        "<text x='"+CX+"' y='"+(CY-7)+"' text-anchor='middle' fill='#2C2820' font-size='21' font-weight='700'>"+total+"</text>"+
-        "<text x='"+CX+"' y='"+(CY+11)+"' text-anchor='middle' fill='#9E9186' font-size='9' letter-spacing='1'>ITEMS</text>"+
-      "</svg>"+
-      "<div>"+aCats.map(function(cat){var p=PAL[cat];return"<div class='legend-item'><span class='ldot' style='background:"+p.d+"'></span><span class='lcat'>"+esc(cat)+"</span><span class='ln'>"+byCat[cat].n+"</span><span class='lc' style='color:"+p.d+"'>"+fps(byCat[cat].cost,currency)+"</span></div>";}).join("")+"</div>"+
-    "</div>")+
-  "</div>"+
-  "<div class='card'><div class='card-lbl'>ESTIMATED COST BY CITY</div>"+
-    (CITIES.filter(function(c){return byCity[c].n>0;}).length===0?"<div class='empty'>No items yet</div>":
-    CITIES.filter(function(c){return byCity[c].n>0;}).map(function(city){
-      var d=byCity[city],w=total?(d.n/total)*100:0;
-      return "<div class='cbar'><span class='cbar-name'>"+esc(city)+"</span><div class='cbar-track'><div class='cbar-fill' style='width:"+w+"%'></div></div><div class='cbar-r'><span>"+d.n+"</span><span style='color:#9E9186'>"+fps(d.cost,currency)+"</span></div></div>";
-    }).join(""))+
-  "</div>"+
-  "<div class='card'><div class='card-lbl'>CATEGORY BREAKDOWN</div>"+
-    (aCats.length===0?"<div class='empty'>Add items to see breakdown</div>":
-    aCats.map(function(cat){
-      var d=byCat[cat],p=PAL[cat],cp=d.n?Math.round(d.done/d.n*100):0;
-      return "<div class='cat-row'><span class='cat-tag' style='background:"+p.b+";color:"+p.t+"'>"+ICO[cat]+" "+esc(cat)+"</span><div class='cat-mid'><div class='mtrack'><div class='mfill' style='width:"+cp+"%;background:"+p.d+"'></div></div><span class='mpct' style='color:"+p.d+"'>"+cp+"%</span></div><div class='cat-r'><span style='color:#6B5F52'>"+d.done+"/"+d.n+"</span><span style='color:"+p.d+";font-weight:600'>"+fps(d.cost,currency)+"</span></div></div>";
-    }).join(""))+
-  "</div>";
+  var acc=CITIES.filter(function(c){return byCity[c].n>0;}).length;
+  return "<div class='cost-hero'><div><div class='cost-lbl'>EST. TOTAL COST</div><div class='cost-val'>"+fps(tJPY,currency)+"</div><div class='cost-sub'>"+total+" wishes across "+acc+" "+(acc===1?"city":"cities")+"</div></div><div style='text-align:right'><div style='font-size:11px;color:#9E9186;margin-bottom:2px'>ACQUIRED</div><div style='font-size:18px;font-weight:700;color:#6B5F52'>"+fps(dJPY,currency)+"</div><div style='font-size:11px;color:#9E9186;margin-top:2px'>"+done+" of "+total+" done</div></div></div>"+
+  "<div class='kpi3'><div class='kpi'><div class='kpi-v'>"+total+"</div><div class='kpi-l'>Wishes</div></div><div class='kpi'><div class='kpi-v og'>"+done+"</div><div class='kpi-l'>Done</div></div><div class='kpi'><div class='kpi-v'>"+pct+"%</div><div class='kpi-l'>Complete</div></div></div>"+
+  "<div class='card'><div class='card-lbl'>FULFILLMENT STATUS</div><div class='prog-wrap'><div class='prog-pct'>"+pct+"%</div><div class='prog-right'><div class='prog-track'><div class='prog-fill' style='width:"+pct+"%'></div></div><div class='prog-meta'><span style='color:#E8650A;font-weight:600'>"+done+" completed</span><span style='color:#6B5F52'>"+(total-done)+" remaining</span></div></div></div></div>"+
+  "<div class='card'><div class='card-lbl'>BY CATEGORY</div>"+(total===0?"<div class='empty'>Add items to see breakdown</div>":"<div class='pie-wrap'><svg width='184' height='184' viewBox='0 0 184 184' style='flex-shrink:0;max-width:100%;height:auto'>"+paths+"<circle cx='"+CX+"' cy='"+CY+"' r='36' fill='#EDEAE4'/><text x='"+CX+"' y='"+(CY-6)+"' text-anchor='middle' fill='#2C2820' font-size='20' font-weight='700'>"+total+"</text><text x='"+CX+"' y='"+(CY+10)+"' text-anchor='middle' fill='#9E9186' font-size='8' letter-spacing='1'>ITEMS</text></svg><div>"+aCats.map(function(cat){var p=PAL[cat];return"<div class='legend-item'><span class='ldot' style='background:"+p.d+"'></span><span class='lcat'>"+esc(cat)+"</span><span class='ln'>"+byCat[cat].n+"</span><span class='lc' style='color:"+p.d+"'>"+fps(byCat[cat].cost,currency)+"</span></div>";}).join("")+"</div></div>")+"</div>"+
+  "<div class='card'><div class='card-lbl'>ESTIMATED COST BY CITY</div>"+(CITIES.filter(function(c){return byCity[c].n>0;}).length===0?"<div class='empty'>No items yet</div>":CITIES.filter(function(c){return byCity[c].n>0;}).map(function(city){var d=byCity[city],w=total?(d.n/total)*100:0;return"<div class='cbar'><span class='cbar-name'>"+esc(city)+"</span><div class='cbar-track'><div class='cbar-fill' style='width:"+w+"%'></div></div><div class='cbar-r'><span>"+d.n+" item"+(d.n!==1?"s":"")+"</span><span style='color:#E8650A;font-weight:600'>"+fps(d.cost,currency)+"</span></div></div>";}).join(""))+"</div>"+
+  "<div class='card'><div class='card-lbl'>CATEGORY BREAKDOWN</div>"+(aCats.length===0?"<div class='empty'>Add items to see breakdown</div>":aCats.map(function(cat){var d=byCat[cat],p=PAL[cat],cp=d.n?Math.round(d.done/d.n*100):0;return"<div class='cat-row'><span class='cat-tag' style='background:"+p.b+";color:"+p.t+"'>"+ICO[cat]+" "+esc(cat)+"</span><div class='cat-mid'><div class='mtrack'><div class='mfill' style='width:"+cp+"%;background:"+p.d+"'></div></div><span class='mpct' style='color:"+p.d+"'>"+cp+"%</span></div><div class='cat-r'><span style='color:#6B5F52'>"+d.done+"/"+d.n+"</span><span style='color:"+p.d+";font-weight:600'>"+fps(d.cost,currency)+"</span></div></div>";}).join(""))+"</div>";
 }
  
-function kpi(v,l,og){return "<div class='kpi'><div class='kpi-v"+(og?" og":"")+"'>"+esc(String(v))+"</div><div class='kpi-l'>"+esc(l)+"</div></div>";}
- 
-function itemList(){
-  var fil=items.filter(function(i){
-    if(fCat!=="All"&&i.category!==fCat)return false;
-    if(fCity!=="All"&&i.city!==fCity)return false;
-    if(fStat==="Done"&&!i.completed)return false;
-    if(fStat==="Pending"&&i.completed)return false;
-    if(srch&&i.name.toLowerCase().indexOf(srch.toLowerCase())<0)return false;
-    return true;
-  });
-  var statusChips=["All","Pending","Done"].map(function(s){return"<button class='chip"+(fStat===s?" on":"")+"' data-stat='"+s+"'>"+s+"</button>";}).join("");
-  var cityChips=["All"].concat(CITIES).map(function(c){return"<button class='chip"+(fCity===c?" on":"")+"' data-city='"+esc(c)+"'>"+esc(c)+"</button>";}).join("");
-  var catChips=["All"].concat(CATS).map(function(c){
-    var on=fCat===c,p=c!=="All"?PAL[c]:null;
-    var st=on&&p?"style='background:"+p.b+";color:"+p.t+";border-color:"+p.d+"88'"  :"";
-    return"<button class='chip"+(on&&c==="All"?" on":"")+"' "+st+" data-catt='"+esc(c)+"'>"+esc(c)+"</button>";
-  }).join("");
-  return "<div class='top-row'>"+
-    "<div class='s-wrap'><span class='s-icon'>\u2315</span><input class='s-inp' id='sinp' placeholder='Search items\u2026' value='"+esc(srch)+"'/></div>"+
-    "<button class='add-btn' id='abtn'>+ Add</button>"+
-  "</div>"+
-  "<div class='chips'>"+statusChips+"<span class='cdiv'></span>"+cityChips+"<span class='cdiv'></span>"+catChips+"</div>"+
+function buildItemList(){
+  var fil=items.filter(function(i){if(fCat!=="All"&&i.category!==fCat)return false;if(fCity!=="All"&&i.city!==fCity)return false;if(fStat==="Done"&&!i.completed)return false;if(fStat==="Pending"&&i.completed)return false;if(srch&&i.name.toLowerCase().indexOf(srch.toLowerCase())<0)return false;return true;});
+  var sc=["All","Pending","Done"].map(function(s){return"<button class='chip"+(fStat===s?" on":"")+"' data-stat='"+s+"'>"+s+"</button>";}).join("");
+  var cc=["All"].concat(CITIES).map(function(c){return"<button class='chip"+(fCity===c?" on":"")+"' data-city='"+esc(c)+"'>"+esc(c)+"</button>";}).join("");
+  var kc=["All"].concat(CATS).map(function(c){var on=fCat===c,p=c!=="All"?PAL[c]:null;var st=on&&p?"style='background:"+p.b+";color:"+p.t+";border-color:"+p.d+"88'":"";return"<button class='chip"+(on&&c==="All"?" on":"")+"' "+st+" data-catt='"+esc(c)+"'>"+esc(c)+"</button>";}).join("");
+  return "<div class='top-row'><div class='s-wrap'><span class='s-icon'>\u2315</span><input class='s-inp' id='sinp' placeholder='Search\u2026' value='"+esc(srch)+"'/></div><button class='compact-btn"+(compactMode?" on":"")+"' id='compbtn'>"+(compactMode?"Full":"Compact")+"</button><button class='add-btn' id='abtn'>+ Add</button></div>"+
+  "<div class='chips'>"+sc+"<span class='cdiv'></span>"+cc+"<span class='cdiv'></span>"+kc+"</div>"+
   "<div class='rline'>"+fil.length+" item"+(fil.length!==1?"s":"")+"</div>"+
-  (fil.length===0?"<div class='card empty'>No items match.</div>":fil.map(function(item,idx){return icard(item,idx);}).join(""));
+  (fil.length===0?"<div class='card empty'>No items match.</div>":fil.map(function(item){return compactMode?buildItemCompact(item):buildItemFull(item);}).join(""));
 }
  
-function icard(item,idx){
-  var p=PAL[item.category]||PAL["Other"];
-  var pr=item.estimatedPrice?fp(item.estimatedPrice,currency):null;
-  var det=(item.purpose||item.location||item.remarks||item.link)?
-    "<div class='idet'>"+
-      (item.purpose?"<div class='dline'><span class='dkey'>For</span>"+esc(item.purpose)+"</div>":"")+
-      (item.location?"<div class='dline'><span class='dkey'>At</span>"+esc(item.location)+"</div>":"")+
-      (item.remarks?"<div class='dline'><span class='dkey'>Note</span><span>"+esc(item.remarks)+"</span></div>":"")+
-      (item.link?"<div class='dline'><span class='dkey'>Link</span><a href='"+esc(item.link)+"' target='_blank' rel='noopener noreferrer' class='dlink'>"+esc(item.link.replace(/^https?:\/\//,"").replace(/\/$/,""))+"</a></div>":"")+
-    "</div>":"";
-  return "<div class='icard'>"+
-    "<div class='itop'>"+
-      "<button class='chk"+(item.completed?" on":"")+"' data-tog='"+item.id+"'>"+(item.completed?"\u2713":"")+"</button>"+
-      "<div class='ibody'>"+
-        "<div class='iname"+(item.completed?" done":"")+"'>"+esc(item.name)+"</div>"+
-        "<div class='itags'><span class='cpill' style='background:"+p.b+";color:"+p.t+"'>"+ICO[item.category]+" "+esc(item.category)+"</span><span class='citypill'>"+esc(item.city)+"</span></div>"+
-      "</div>"+
-      "<div class='iend'>"+
-        (pr?"<span class='iprice"+(item.completed?" done":"")+"'>"+esc(pr)+"</span>":"<span class='idash'>\u2014</span>")+
-        "<button class='delbtn' data-del='"+item.id+"'>\u2715</button>"+
-      "</div>"+
-    "</div>"+
-    det+
-    (item.completed?"<div class='cstrip' style='background:"+p.b+";color:"+p.t+"'>"+ICO[item.category]+" Completed</div>":"")+
-  "</div>";
+function buildItemFull(item){
+  var p=PAL[item.category]||PAL["Other"],pr=item.estimatedPrice?fp(item.estimatedPrice,currency):null;
+  var det=(item.purpose||item.location||item.address||item.cluster||item.remarks||item.link)?"<div class='idet'>"+
+    (item.purpose?"<div class='dline'><span class='dkey'>For</span><span>"+esc(item.purpose)+"</span></div>":"")+
+    (item.location?"<div class='dline'><span class='dkey'>At</span><span>"+esc(item.location)+"</span></div>":"")+
+    (item.cluster?"<div class='dline'><span class='dkey'>Area</span><span style='color:#8A30CC;font-weight:500'>"+esc(item.cluster)+"</span></div>":"")+
+    (item.address?"<div class='dline'><span class='dkey'>Addr</span><span>"+esc(item.address)+"</span></div>":"")+
+    (item.remarks?"<div class='dline'><span class='dkey'>Note</span><span>"+esc(item.remarks)+"</span></div>":"")+
+    (item.link?"<div class='dline'><span class='dkey'>Link</span><a href='"+esc(item.link)+"' target='_blank' class='dlink'>"+esc(item.link.replace(/^https?:\/\//,"").replace(/\/$/,""))+"</a></div>":"")+
+  "</div>":"";
+  return "<div class='icard'><div class='itop'><button class='chk"+(item.completed?" on":"")+"' data-tog='"+item.id+"'>"+(item.completed?"\u2713":"")+"</button><div class='ibody'><div class='iname"+(item.completed?" done":"")+"'>"+esc(item.name)+"</div><div class='itags'><span class='cpill' style='background:"+p.b+";color:"+p.t+"'>"+ICO[item.category]+" "+esc(item.category)+"</span><span class='citypill'>"+esc(item.city)+"</span></div></div><div class='iend'>"+(pr?"<span class='iprice"+(item.completed?" done":"")+"'>"+esc(pr)+"</span>":"<span class='idash'>\u2014</span>")+"<div class='ibtns'><button class='editbtn' data-edit='"+item.id+"'>\u270E</button><button class='delbtn' data-del='"+item.id+"'>\u2715</button></div></div></div>"+det+(item.completed?"<div class='cstrip' style='background:"+p.b+";color:"+p.t+"'>"+ICO[item.category]+" Completed</div>":"")+"</div>";
 }
  
-function form(){
-  var p=PAL[fd.category];
-  var suggs=gs(fd.city,fd.category);
-  var locHtml="";
-  if(!fCustomLoc&&suggs.length>0){
-    locHtml="<div class='sugg-hint'>Tap a suggestion</div><div class='sugg-grid'>"+
-      suggs.map(function(s){var sel=fd.location===s;var st=sel?"background:"+p.b+";color:"+p.t+";border-color:"+p.d+"":"";return"<button class='schip' style='"+st+"' data-sg='"+esc(s)+"'>"+esc(s)+"</button>";}).join("")+
-      "<button class='schip dashed' id='custbtn'>\u270E Type own</button></div>";
-  } else {
-    locHtml="<input class='inp' id='locinp' placeholder='Store, area\u2026' value='"+esc(fd.location)+"'/>"+
-      (suggs.length>0?"<button class='blink' id='backbtn'>\u2190 Suggestions</button>":"");
+function buildItemCompact(item){
+  var p=PAL[item.category]||PAL["Other"],pr=item.estimatedPrice?fp(item.estimatedPrice,currency):null;
+  return "<div class='icard-c'><button class='chk"+(item.completed?" on":"")+"' data-tog='"+item.id+"'>"+(item.completed?"\u2713":"")+"</button><span class='cdot' style='background:"+p.d+"'></span><span class='iname-c"+(item.completed?" done":"")+"'>"+esc(item.name)+"</span><span class='citypill-c'>"+esc(item.city)+"</span>"+(pr?"<span class='iprice-c"+(item.completed?" done":"")+"'>"+esc(pr)+"</span>":"<span style='color:#9E9186;font-size:13px;flex-shrink:0'>\u2014</span>")+"<div class='ibtns-c'><button class='editbtn-c' data-edit='"+item.id+"'>\u270E</button><button class='delbtn-c' data-del='"+item.id+"'>\u2715</button></div></div>";
+}
+ 
+function buildStoreList(){
+  var clusterMap={};
+  stores.forEach(function(s){if(s.cluster){var key=s.city+"|"+s.cluster;if(!clusterMap[key]){clusterMap[key]={city:s.city,cluster:s.cluster,stores:[]};}clusterMap[key].stores.push(s);}});
+  var clusterKeys=Object.keys(clusterMap).filter(function(k){return clusterMap[k].stores.length>=2;});
+  var byCity={};CITIES.forEach(function(c){byCity[c]=0;});
+  stores.forEach(function(s){byCity[s.city]=(byCity[s.city]||0)+1;});
+  var activeCities=CITIES.filter(function(c){return byCity[c]>0;});
+  var maxC=activeCities.length>0?Math.max.apply(null,activeCities.map(function(c){return byCity[c];})):1;
+  var fil=stores.filter(function(s){if(sCat!=="All"&&s.category!==sCat)return false;if(sCity!=="All"&&s.city!==sCity)return false;if(sSrch&&s.name.toLowerCase().indexOf(sSrch.toLowerCase())<0)return false;return true;});
+  var cc=["All"].concat(CITIES).map(function(c){return"<button class='chip"+(sCity===c?" on":"")+"' data-scity='"+esc(c)+"'>"+esc(c)+"</button>";}).join("");
+  var kc=["All"].concat(CATS).map(function(c){var on=sCat===c,p=c!=="All"?PAL[c]:null;var st=on&&p?"style='background:"+p.b+";color:"+p.t+";border-color:"+p.d+"88'":"";return"<button class='chip"+(on&&c==="All"?" on":"")+"' "+st+" data-scat='"+esc(c)+"'>"+esc(c)+"</button>";}).join("");
+ 
+  var clusterSection="";
+  if(clusterKeys.length>0){
+    clusterSection="<div class='card'><div class='card-lbl'>CLUSTERS</div>"+
+      clusterKeys.map(function(key){
+        var cl=clusterMap[key];
+        var routeUrl=makeClusterRouteUrl(cl.stores);
+        return "<div class='cluster-card'><div class='cluster-header'><div><div class='cluster-name'>"+esc(cl.cluster)+"</div><div class='cluster-meta'>"+esc(cl.city)+" \u00B7 "+cl.stores.length+" stores</div></div><span class='cluster-badge'>Walkable area</span></div><div class='cluster-stores'>"+cl.stores.map(function(s){return"<div class='cluster-store-name'>"+esc(s.name)+"</div>";}).join("")+"</div><a href='"+routeUrl+"' target='_blank' class='route-btn'>Open walking route in Google Maps \u2197</a></div>";
+      }).join("")+"</div>";
   }
-  var prev="";
-  var pv=parseFloat(fd.price);
-  if(!isNaN(pv)&&pv>0){prev=fPriceCur==="JPY"?"\u2248 Rp"+Math.round(pv*RATE).toLocaleString("id-ID"):"\u2248 \u00A5"+Math.round(pv/RATE).toLocaleString();}
-  return "<div class='overlay' id='ov'>"+
-    "<div class='sheet'>"+
-      "<div class='shandle'></div>"+
-      "<div class='shead'><div class='stitle'>New Wish</div><button class='sdone' id='closebtn'>Done</button></div>"+
-      "<div class='sbody'>"+
-        "<div class='fmb'><div class='flbl'>Item Name</div><input class='inp' id='fn' placeholder='What do you want?' value='"+esc(fd.name)+"'/></div>"+
-        "<div class='frow'>"+
-          "<div><div class='flbl'>Category</div><select class='inp' id='fcat'>"+CATS.map(function(c){return"<option value='"+esc(c)+"'"+(fd.category===c?" selected":"")+">"+esc(c)+"</option>";}).join("")+"</select></div>"+
-          "<div><div class='flbl'>City</div><select class='inp' id='fcity'>"+CITIES.map(function(c){return"<option value='"+esc(c)+"'"+(fd.city===c?" selected":"")+">"+esc(c)+"</option>";}).join("")+"</select></div>"+
-        "</div>"+
-        "<div class='fmb'><div class='flbl'>What is it for?</div><input class='inp' id='fpurp' placeholder='Personal use, gift\u2026' value='"+esc(fd.purpose)+"'/></div>"+
-        "<div class='fmb'><div class='flbl'>Where to Find \u2014 "+esc(fd.city)+"</div>"+locHtml+"</div>"+
-        "<div class='fmb'>"+
-          "<div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:7px'>"+
-            "<div class='flbl'>Estimated Price</div>"+
-            "<div class='ptoggle'>"+
-              "<button class='popt"+(fPriceCur==="JPY"?" on":"")+"' id='pjpy'>\u00A5 JPY</button>"+
-              "<button class='popt"+(fPriceCur==="IDR"?" on":"")+"' id='pidr'>Rp IDR</button>"+
-            "</div>"+
-          "</div>"+
-          "<input class='inp' id='fprice' type='number' placeholder='"+(fPriceCur==="JPY"?"Enter amount in \u00A5":"Enter amount in Rp")+"' value='"+esc(fd.price)+"'/>"+
-          "<div class='phint' id='phint'>"+esc(prev)+"</div>"+
-        "</div>"+
-        "<div class='fmb'><div class='flbl'>Remarks (optional)</div><textarea class='inp' id='frmk' placeholder='Notes, size, colour\u2026' style='min-height:72px;line-height:1.5'>"+esc(fd.remarks)+"</textarea></div>"+
-        "<div class='fmb'><div class='flbl'>Product Link (optional)</div><input class='inp' id='flink' type='url' placeholder='https://\u2026' value='"+esc(fd.link)+"'/></div>"+
-      "</div>"+
-      "<div class='sfoot'>"+
-        "<button class='cancelbtn' id='cancelbtn'>Cancel</button>"+
-        "<button class='savebtn' id='savebtn'"+(fd.name.trim()?"":" disabled")+">Add to Wishlist</button>"+
-      "</div>"+
-    "</div>"+
-  "</div>";
+ 
+  var mapBtns=(sCity!=="All"&&fil.length>0)?
+    "<div class='map-btn-row'>"+
+      "<a href='"+makeMapSearchUrl(fil)+"' target='_blank' class='map-btn-pins'>See all on map</a>"+
+      "<a href='"+makeRouteUrl(fil)+"' target='_blank' class='map-btn-route'>Plan route \u2197</a>"+
+    "</div>":"";
+ 
+  return "<div class='top-row'><div class='s-wrap'><span class='s-icon'>\u2315</span><input class='s-inp' id='ssinp' placeholder='Search stores\u2026' value='"+esc(sSrch)+"'/></div><button class='add-btn' id='sabtn'>+ Add</button></div>"+
+    clusterSection+
+    "<div class='card'><div class='card-lbl'>STORES BY CITY</div>"+(stores.length===0?"<div class='empty'>Add stores to see the chart</div>":"<div class='sbar-wrap'>"+activeCities.map(function(city){var n=byCity[city],w=maxC>0?(n/maxC)*100:0;return"<div class='sbar-row'><span class='sbar-label'>"+esc(city)+"</span><div class='sbar-track'><div class='sbar-fill' style='width:"+w+"%'></div><span class='sbar-count'>"+n+"</span></div></div>";}).join("")+"</div>")+"</div>"+
+    "<div class='chips'>"+cc+"<span class='cdiv'></span>"+kc+"</div>"+
+    mapBtns+
+    "<div class='rline'>"+fil.length+" store"+(fil.length!==1?"s":"")+"</div>"+
+    (fil.length===0?"<div class='card empty'>"+(stores.length===0?"No stores yet. Tap + Add to start.":"No stores match your filters.")+"</div>":fil.map(function(store){return buildStoreCard(store);}).join(""));
+}
+ 
+function buildStoreCard(store){
+  var p=PAL[store.category]||PAL["Other"];
+  var mapsUrl=store.address?("https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(store.address)+"&travelmode=walking"):"";
+  return "<div class='scard'><div class='scard-top'><span class='scard-name'>"+esc(store.name)+"</span><div class='scard-btns'>"+(mapsUrl?"<a href='"+mapsUrl+"' target='_blank' class='dir-btn'>\u21D7</a>":"")+"<button class='seditbtn' data-sedit='"+store.id+"'>\u270E</button><button class='sdelbtn' data-sdel='"+store.id+"'>\u2715</button></div></div><div class='scard-tags'><span class='cpill' style='background:"+p.b+";color:"+p.t+"'>"+ICO[store.category]+" "+esc(store.category)+"</span><span class='citypill'>"+esc(store.city)+"</span>"+(store.cluster?"<span class='cluster-pill'>\uD83D\uDCCD "+esc(store.cluster)+"</span>":"")+"</div>"+(store.address?"<div class='scard-addr'>"+esc(store.address)+"</div>":"")+(store.notes?"<div class='scard-note'>"+esc(store.notes)+"</div>":"")+"</div>";
+}
+ 
+function buildItemForm(){
+  var p=PAL[fd.category],suggs=gs(fd.city,fd.category),locHtml="";
+  if(!fCustomLoc&&suggs.length>0){locHtml="<div class='sugg-hint'>Tap a suggestion</div><div class='sugg-grid'>"+suggs.map(function(s){return"<button class='schip"+(fd.location===s?" sel":"")+"' data-sg='"+esc(s)+"'>"+esc(s)+"</button>";}).join("")+"<button class='schip dashed' id='custbtn'>\u270E Type own</button></div>";}
+  else{locHtml="<input class='inp' id='locinp' placeholder='Store or area\u2026' value='"+esc(fd.location)+"'/>"+(suggs.length>0?"<button class='blink' id='backbtn'>\u2190 Suggestions</button>":"");}
+  var prev="",pv=parseFloat(fd.price);
+  if(!isNaN(pv)&&pv>0)prev=fPriceCur==="JPY"?"\u2248 Rp"+Math.round(pv*RATE).toLocaleString("id-ID"):"\u2248 \u00A5"+Math.round(pv/RATE).toLocaleString();
+  return "<div class='overlay' id='ov'><div class='sheet'><div class='shandle'></div><div class='shead'><div class='stitle'>"+(editId?"Edit Wish":"New Wish")+"</div><button class='sdone' id='closebtn'>Done</button></div><div class='sbody'>"+
+    "<div class='fmb'><div class='flbl'>Item Name</div><input class='inp' id='fn' placeholder='What do you want?' value='"+esc(fd.name)+"'/></div>"+
+    "<div class='frow'><div><div class='flbl'>Category</div><select class='inp' id='fcat'>"+CATS.map(function(c){return"<option value='"+esc(c)+"'"+(fd.category===c?" selected":"")+">"+esc(c)+"</option>";}).join("")+"</select></div><div><div class='flbl'>City</div><select class='inp' id='fcity'>"+CITIES.map(function(c){return"<option value='"+esc(c)+"'"+(fd.city===c?" selected":"")+">"+esc(c)+"</option>";}).join("")+"</select></div></div>"+
+    "<div class='fmb'><div class='flbl'>What is it for?</div><input class='inp' id='fpurp' placeholder='Personal use, gift\u2026' value='"+esc(fd.purpose)+"'/></div>"+
+    "<div class='fmb'><div class='flbl'>Where to Find \u2014 "+esc(fd.city)+"</div>"+locHtml+"</div>"+
+    "<div class='fmb'><div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:7px'><div class='flbl' style='margin-bottom:0'>Estimated Price</div><div class='ptoggle'><button class='popt"+(fPriceCur==="JPY"?" on":"")+"' id='pjpy'>\u00A5 JPY</button><button class='popt"+(fPriceCur==="IDR"?" on":"")+"' id='pidr'>Rp IDR</button></div></div><input class='inp' id='fprice' type='number' placeholder='"+(fPriceCur==="JPY"?"Amount in \u00A5":"Amount in Rp")+"' value='"+esc(fd.price)+"'/><div class='phint' id='phint'>"+esc(prev)+"</div></div>"+
+    "<div class='fmb'><div class='flbl'>Remarks (optional)</div><textarea class='inp' id='frmk' placeholder='Notes, size, colour\u2026' style='min-height:72px;line-height:1.5'>"+esc(fd.remarks)+"</textarea></div>"+
+    "<div class='fmb'><div class='flbl'>Product Link (optional)</div><input class='inp' id='flink' type='url' placeholder='https://\u2026' value='"+esc(fd.link)+"'/></div>"+
+    "<div class='fmb'><div class='flbl'>Address (optional)</div><input class='inp' id='faddr' placeholder='Street address or Google Maps link\u2026' value='"+esc(fd.address)+"'/></div>"+
+  "</div><div class='sfoot'><button class='cancelbtn' id='cancelbtn'>Cancel</button><button class='savebtn' id='savebtn'"+(fd.name.trim()?"":" disabled")+">"+(editId?"Save Changes":"Add to Wishlist")+"</button></div></div></div>";
+}
+ 
+function buildStoreForm(){
+  var autoMsg=sAutoCluster?"Auto-detected: "+sAutoCluster:"";
+  return "<div class='overlay' id='sov'><div class='sheet'><div class='shandle'></div><div class='shead'><div class='stitle'>"+(sEditId?"Edit Store":"New Store")+"</div><button class='sdone' id='sclosebtn'>Done</button></div><div class='sbody'>"+
+    "<div class='fmb'><div class='flbl'>Store Name</div><input class='inp' id='sfn' placeholder='e.g. Yodobashi Camera Akihabara' value='"+esc(sfd.name)+"'/></div>"+
+    "<div class='frow'><div><div class='flbl'>Category</div><select class='inp' id='sfcat'>"+CATS.map(function(c){return"<option value='"+esc(c)+"'"+(sfd.category===c?" selected":"")+">"+esc(c)+"</option>";}).join("")+"</select></div><div><div class='flbl'>City</div><select class='inp' id='sfcity'>"+CITIES.map(function(c){return"<option value='"+esc(c)+"'"+(sfd.city===c?" selected":"")+">"+esc(c)+"</option>";}).join("")+"</select></div></div>"+
+    "<div class='fmb'><div class='flbl'>Address (optional)</div><input class='inp' id='sfaddr' placeholder='Street address, area or landmark\u2026' value='"+esc(sfd.address)+"'/>"+(autoMsg?"<div class='auto-tag'>"+esc(autoMsg)+"</div>":"")+"</div>"+
+    "<div class='fmb'><div class='flbl'>Cluster / Area tag</div><input class='inp' id='sfcluster' placeholder='e.g. Nipponbashi, Akihabara\u2026' value='"+esc(sfd.cluster)+"'/><div style='font-size:11px;color:#9E9186;margin-top:5px'>Stores with the same cluster tag will be grouped with a route button</div></div>"+
+    "<div class='fmb'><div class='flbl'>Notes (optional)</div><textarea class='inp' id='sfnotes' placeholder='Opening hours, tips, floor\u2026' style='min-height:72px;line-height:1.5'>"+esc(sfd.notes)+"</textarea></div>"+
+  "</div><div class='sfoot'><button class='cancelbtn' id='scancelbtn'>Cancel</button><button class='savebtn' id='ssavebtn'"+(sfd.name.trim()?"":" disabled")+">"+(sEditId?"Save Changes":"Add Store")+"</button></div></div></div>";
 }
  
 function bind(){
   function on(id,ev,fn){var el=document.getElementById(id);if(el)el.addEventListener(ev,fn);}
   function all(sel,fn){document.querySelectorAll(sel).forEach(fn);}
- 
   on("cbtn","click",function(){currency=currency==="JPY"?"IDR":"JPY";render();});
   on("tdash","click",function(){tab="dashboard";render();});
   on("titems","click",function(){tab="items";render();});
-  on("abtn","click",function(){fd={name:"",category:"Food & Drinks",purpose:"",city:"Tokyo",location:"",price:"",remarks:"",link:""};fCustomLoc=false;fPriceCur="JPY";showForm=true;render();});
+  on("tstores","click",function(){tab="stores";render();});
+  on("compbtn","click",function(){compactMode=!compactMode;render();});
+  on("abtn","click",function(){fd={name:"",category:"Food & Drinks",purpose:"",city:"Tokyo",location:"",address:"",cluster:"",price:"",remarks:"",link:""};fCustomLoc=false;fPriceCur="JPY";editId=null;showForm=true;render();});
   on("sinp","input",function(e){srch=e.target.value;render();});
- 
   all("[data-stat]",function(b){b.addEventListener("click",function(){fStat=b.dataset.stat;render();});});
   all("[data-city]",function(b){b.addEventListener("click",function(){fCity=b.dataset.city;render();});});
   all("[data-catt]",function(b){b.addEventListener("click",function(){fCat=b.dataset.catt;render();});});
   all("[data-tog]",function(b){b.addEventListener("click",function(){var id=b.dataset.tog;items=items.map(function(i){return i.id===id?Object.assign({},i,{completed:!i.completed}):i;});save();render();});});
   all("[data-del]",function(b){b.addEventListener("click",function(){items=items.filter(function(i){return i.id!==b.dataset.del;});save();toast("Item removed");render();});});
- 
-  on("ov","click",function(e){if(e.target===document.getElementById("ov")){showForm=false;render();}});
-  on("closebtn","click",function(){showForm=false;render();});
-  on("cancelbtn","click",function(){showForm=false;render();});
- 
+  all("[data-edit]",function(b){b.addEventListener("click",function(){var id=b.dataset.edit,item=null;for(var i=0;i<items.length;i++){if(items[i].id===id){item=items[i];break;}}if(!item)return;fd={name:item.name,category:item.category,purpose:item.purpose||"",city:item.city,location:item.location||"",address:item.address||"",cluster:item.cluster||"",price:item.estimatedPrice?String(item.estimatedPrice):"",remarks:item.remarks||"",link:item.link||""};fCustomLoc=false;fPriceCur="JPY";editId=id;showForm=true;render();});});
+  on("sabtn","click",function(){sfd={name:"",category:"Food & Drinks",city:"Tokyo",address:"",cluster:"",notes:""};sEditId=null;sAutoCluster="";showStoreForm=true;render();});
+  on("ssinp","input",function(e){sSrch=e.target.value;render();});
+  all("[data-scity]",function(b){b.addEventListener("click",function(){sCity=b.dataset.scity;render();});});
+  all("[data-scat]",function(b){b.addEventListener("click",function(){sCat=b.dataset.scat;render();});});
+  all("[data-sdel]",function(b){b.addEventListener("click",function(){stores=stores.filter(function(s){return s.id!==b.dataset.sdel;});saveStores();toast("Store removed");render();});});
+  all("[data-sedit]",function(b){b.addEventListener("click",function(){var id=b.dataset.sedit,store=null;for(var i=0;i<stores.length;i++){if(stores[i].id===id){store=stores[i];break;}}if(!store)return;sfd={name:store.name,category:store.category,city:store.city,address:store.address||"",cluster:store.cluster||"",notes:store.notes||""};sEditId=id;sAutoCluster="";showStoreForm=true;render();});});
+  on("ov","click",function(e){if(e.target===document.getElementById("ov")){showForm=false;editId=null;render();}});
+  on("closebtn","click",function(){showForm=false;editId=null;render();});
+  on("cancelbtn","click",function(){showForm=false;editId=null;render();});
   on("fn","input",function(e){fd.name=e.target.value;var sb=document.getElementById("savebtn");if(sb)sb.disabled=!e.target.value.trim();});
   on("fcat","change",function(e){fd.category=e.target.value;fd.location="";fCustomLoc=false;render();});
   on("fcity","change",function(e){fd.city=e.target.value;fd.location="";fCustomLoc=false;render();});
   on("fpurp","input",function(e){fd.purpose=e.target.value;});
-  on("fprice","input",function(e){
-    fd.price=e.target.value;
-    var pv=parseFloat(e.target.value),ph=document.getElementById("phint");
-    if(ph){if(!isNaN(pv)&&pv>0){ph.textContent=fPriceCur==="JPY"?"\u2248 Rp"+Math.round(pv*RATE).toLocaleString("id-ID"):"\u2248 \u00A5"+Math.round(pv/RATE).toLocaleString();}else{ph.textContent="";}}
-  });
+  on("fprice","input",function(e){fd.price=e.target.value;var pv=parseFloat(e.target.value),ph=document.getElementById("phint");if(ph)ph.textContent=(!isNaN(pv)&&pv>0)?(fPriceCur==="JPY"?"\u2248 Rp"+Math.round(pv*RATE).toLocaleString("id-ID"):"\u2248 \u00A5"+Math.round(pv/RATE).toLocaleString()):"";});
   on("frmk","input",function(e){fd.remarks=e.target.value;});
   on("flink","input",function(e){fd.link=e.target.value;});
+  on("faddr","input",function(e){fd.address=e.target.value;});
   on("locinp","input",function(e){fd.location=e.target.value;});
- 
   on("pjpy","click",function(){if(fPriceCur!=="JPY"){var v=parseFloat(fd.price);if(!isNaN(v)&&v>0)fd.price=String(Math.round(v/RATE));fPriceCur="JPY";render();}});
   on("pidr","click",function(){if(fPriceCur!=="IDR"){var v=parseFloat(fd.price);if(!isNaN(v)&&v>0)fd.price=String(Math.round(v*RATE));fPriceCur="IDR";render();}});
- 
   all("[data-sg]",function(b){b.addEventListener("click",function(){fd.location=b.dataset.sg;render();});});
   on("custbtn","click",function(){fCustomLoc=true;fd.location="";render();});
   on("backbtn","click",function(){fCustomLoc=false;fd.location="";render();});
- 
-  on("savebtn","click",function(){
-    if(!fd.name.trim())return;
-    var jpy=parseFloat(fd.price)||0;
-    if(fPriceCur==="IDR")jpy=Math.round(jpy/RATE);
-    var newItem={id:uid(),name:fd.name,category:fd.category,purpose:fd.purpose,city:fd.city,location:fd.location,estimatedPrice:jpy,completed:false,createdAt:Date.now(),remarks:fd.remarks,link:fd.link};
-    items=[newItem].concat(items);
-    save();showForm=false;toast("Added to wishlist \u2713");render();
-  });
+  on("savebtn","click",function(){if(!fd.name.trim())return;var jpy=parseFloat(fd.price)||0;if(fPriceCur==="IDR")jpy=Math.round(jpy/RATE);if(editId){items=items.map(function(i){if(i.id!==editId)return i;return Object.assign({},i,{name:fd.name,category:fd.category,purpose:fd.purpose,city:fd.city,location:fd.location,address:fd.address,cluster:fd.cluster,estimatedPrice:jpy,remarks:fd.remarks,link:fd.link});});save();showForm=false;editId=null;toast("Item updated \u2713");render();}else{items=[{id:uid(),name:fd.name,category:fd.category,purpose:fd.purpose,city:fd.city,location:fd.location,address:fd.address,cluster:fd.cluster,estimatedPrice:jpy,completed:false,createdAt:Date.now(),remarks:fd.remarks,link:fd.link}].concat(items);save();showForm=false;toast("Added to wishlist \u2713");render();}});
+  on("sov","click",function(e){if(e.target===document.getElementById("sov")){showStoreForm=false;sEditId=null;render();}});
+  on("sclosebtn","click",function(){showStoreForm=false;sEditId=null;render();});
+  on("scancelbtn","click",function(){showStoreForm=false;sEditId=null;render();});
+  on("sfn","input",function(e){sfd.name=e.target.value;var sb=document.getElementById("ssavebtn");if(sb)sb.disabled=!e.target.value.trim();});
+  on("sfcat","change",function(e){sfd.category=e.target.value;});
+  on("sfcity","change",function(e){sfd.city=e.target.value;var det=detectCluster(sfd.city,sfd.address);if(det){sfd.cluster=det;sAutoCluster=det;}render();});
+  on("sfaddr","input",function(e){sfd.address=e.target.value;var det=detectCluster(sfd.city,sfd.address);if(det&&!sfd.cluster)sfd.cluster=det;sAutoCluster=det;var clEl=document.getElementById("sfcluster");if(clEl&&det&&!clEl.value)clEl.value=det;var atEl=document.querySelector(".auto-tag");if(atEl)atEl.textContent=det?"Auto-detected: "+det:"";});
+  on("sfcluster","input",function(e){sfd.cluster=e.target.value;});
+  on("sfnotes","input",function(e){sfd.notes=e.target.value;});
+  on("ssavebtn","click",function(){if(!sfd.name.trim())return;var clEl=document.getElementById("sfcluster");var clusterVal=clEl?clEl.value.trim():sfd.cluster;if(sEditId){stores=stores.map(function(s){if(s.id!==sEditId)return s;return Object.assign({},s,{name:sfd.name,category:sfd.category,city:sfd.city,address:sfd.address,cluster:clusterVal,notes:sfd.notes});});saveStores();showStoreForm=false;sEditId=null;toast("Store updated \u2713");render();}else{stores=stores.concat([{id:uid(),name:sfd.name,category:sfd.category,city:sfd.city,address:sfd.address,cluster:clusterVal,notes:sfd.notes,createdAt:Date.now()}]);saveStores();showStoreForm=false;toast("Store added \u2713");render();}});
 }
  
 render();
